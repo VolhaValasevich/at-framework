@@ -1,0 +1,12 @@
+{
+    "Country Bar": {
+        "isCollection": false,
+        "selector": "#country",
+        "$ref": ""
+    },
+    "Navigation Bar": {
+        "isCollection": false,
+        "selector": "#navbar",
+        "$ref": ""
+    }
+}

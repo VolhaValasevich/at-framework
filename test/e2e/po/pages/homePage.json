@@ -1,0 +1,9 @@
+{
+    "Home Page": {
+        "url": "/home",
+        "header": {
+            "isCollection": false,
+            "$ref": "../components/header.json"
+        }
+    }
+}

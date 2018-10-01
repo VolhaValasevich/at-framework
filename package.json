@@ -1,0 +1,24 @@
+{
+  "name": "sandisk-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "cucumber": "^3.2.1",
+    "cucumber-html-reporter": "^3.0.4",
+    "eslint": "^5.2.0",
+    "protractor": "^5.2.2",
+    "protractor-cucumber-framework": "^4.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
