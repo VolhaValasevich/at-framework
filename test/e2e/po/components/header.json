@@ -1,12 +1,10 @@
 {
+    "isCollection": false,
+    "selector": "header",
     "Country Bar": {
-        "isCollection": false,
-        "selector": "#country",
-        "$ref": ""
+        "ref": "./test/e2e/po/components/countryBar.json"
     },
     "Navigation Bar": {
-        "isCollection": false,
-        "selector": "#navbar",
-        "$ref": ""
+        "ref": "./test/e2e/po/components/navigationBar.json"  
     }
 }

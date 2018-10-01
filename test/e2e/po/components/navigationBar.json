@@ -1,0 +1,12 @@
+{
+    "isCollection": false,
+    "selector": "#navbar",
+    "Main Logo": {
+        "isCollection": false,
+        "selector": "a.logo-lg"
+    },
+    "Navigation Links": {
+        "isCollection": true,
+        "selector": "div.top-menu > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+    }
+}

@@ -1,9 +1,7 @@
 {
-    "Home Page": {
-        "url": "/home",
-        "header": {
-            "isCollection": false,
-            "$ref": "../components/header.json"
-        }
+    "name": "Home Page",
+    "url": "/home",
+    "Header": {
+        "ref": "./test/e2e/po/components/header.json"
     }
 }

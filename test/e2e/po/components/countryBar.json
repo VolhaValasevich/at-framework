@@ -1,0 +1,20 @@
+{
+    "isCollection": false,
+    "selector": "#country",
+    "Country Links": {
+        "isCollection": true,
+        "selector": ""
+    },
+    "Retail Icon": {
+        "isCollection": false,
+        "selector": "span.icon-retail"
+    },
+    "Global Icon": {
+        "isCollection": false,
+        "selector": "span.icon-global"
+    },
+    "Search Icon": {
+        "isCollection": false,
+        "selector": "span.icon-search3"
+    }
+}
