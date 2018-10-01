@@ -7,6 +7,6 @@
     },
     "Navigation Links": {
         "isCollection": true,
-        "selector": "div.top-menu > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+        "selector": "div.nav-wrapper > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
     }
 }

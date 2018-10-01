@@ -3,7 +3,7 @@
     "selector": "#country",
     "Country Links": {
         "isCollection": true,
-        "selector": ""
+        "selector": "div.top-menu > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
     },
     "Retail Icon": {
         "isCollection": false,
