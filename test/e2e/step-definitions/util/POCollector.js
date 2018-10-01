@@ -22,6 +22,7 @@ class POCollector {
     getAllPages(dir) {
         const pages = fs.readdirSync(path.resolve(dir));
         pages.forEach((page) => {
+            if (page === 'MasterPO.json') return;
             let pageObj = require(path.resolve(dir, page));
             pageObj = this.getReferences(pageObj);
             this.masterPO[pageObj.name] = pageObj;

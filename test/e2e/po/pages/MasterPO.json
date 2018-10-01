@@ -2,7 +2,7 @@
     "Home Page": {
         "name": "Home Page",
         "url": "/home",
-        "header": {
+        "Header": {
             "isCollection": false,
             "selector": "header",
             "Country Bar": {
