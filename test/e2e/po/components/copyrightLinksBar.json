@@ -1,0 +1,14 @@
+{
+    "isCollection": false,
+    "selector": "div.sd-bg-red",
+    "children": {
+        "Copyright Links": {
+            "isCollection": true,
+            "selector": "ul.footer-links > li > a"
+        },
+        "Footer Logo": {
+            "isCollection": false,
+            "selector": "img.footer-logo"
+        }
+    }
+}

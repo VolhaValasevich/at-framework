@@ -2,10 +2,6 @@
     "isCollection": false,
     "selector": "#navbar",
     "children": {
-        "Main Logo": {
-            "isCollection": false,
-            "selector": "a.logo-lg"
-        },
         "Navigation Links": {
             "isCollection": true,
             "selector": "div.nav-wrapper > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
