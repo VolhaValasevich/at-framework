@@ -1,6 +1,6 @@
 {
     "isCollection": true,
-    "selector": "#d1-menu > ul > li > a",   //access parent selector
+    "selector": "#d1-menu > ul > li > a", 
     "children": {
         "Submenu": {
             "isCollection": false,
