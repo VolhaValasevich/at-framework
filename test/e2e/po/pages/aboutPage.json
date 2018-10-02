@@ -1,12 +1,9 @@
 {
-    "name": "Main Page",
-    "url": "",
+    "name": "About Page",
+    "url": "/about",
     "children": {
         "Header": {
             "ref": "./test/e2e/po/components/header.json"
-        },
-        "Slider Section": {
-            "ref": "./test/e2e/po/components/sliderSection.json"
         },
         "Copyright Footer": {
             "ref": "./test/e2e/po/components/footerCopyright.json"

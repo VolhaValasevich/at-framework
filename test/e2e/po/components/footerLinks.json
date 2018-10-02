@@ -1,0 +1,9 @@
+{
+    "isCollection": true,
+    "selector": "#d1-menu > ul > li > a",
+    "children": {
+        "Submenu": {
+            
+        }
+    }
+}
