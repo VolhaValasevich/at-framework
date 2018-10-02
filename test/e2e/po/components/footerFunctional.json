@@ -1,9 +1,7 @@
 {
-    "isCollection": false,
     "selector": "div.functionalfooter > footer",
     "children": {
         "Main Links Section": {
-            "isCollection": false,
             "selector": "div.main-links",
             "children": {
                 "Main Links": {
@@ -12,10 +10,10 @@
             }
         },
         "Secondary Links Section": {
-            "isCollection": false,
             "selector": "div.secondary-links",
             "children": {
                 "Secondary Links": {
+                    "selector": "",
                     "ref": "./test/e2e/po/components/footerLinks.json"
                 }
             }

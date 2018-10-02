@@ -1,5 +1,4 @@
 {
-    "isCollection": false,
     "selector": "#navbar",
     "children": {
         "Navigation Links": {

@@ -1,13 +1,10 @@
 {
-    "isCollection": false,
     "selector": "form.search-container",
     "children": {
         "Footer Search Bar": {
-            "isCollection": false,
             "selector": "#search-box-footer"
         },
         "Footer Search Submit Button": {
-            "isCollection": false,
             "selector": "input.go"
         }
     }

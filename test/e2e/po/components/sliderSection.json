@@ -1,9 +1,7 @@
 {
-    "isCollection": false,
     "selector": "div.slider",
     "children": {
         "Slide Area": {
-            "isCollection": false,
             "selector": "div.slick-list",
             "children": {
                 "Slides": {
@@ -13,7 +11,6 @@
             }
         },
         "Dots Area": {
-            "isCollection": false,
             "selector": "ul.slick-dots",
             "children": {
                 "Buttons": {

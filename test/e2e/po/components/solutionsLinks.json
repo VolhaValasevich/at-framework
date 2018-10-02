@@ -1,5 +1,4 @@
 {
-    "isCollection": false,
     "selector": "div.solutions-links",
     "children": {
         "Stories Links": {
@@ -7,23 +6,18 @@
             "selector": "div.stories-links > div"
         },
         "Facebook Icon": {
-            "isCollection": false,
             "selector": "span.icon-sd-facebook"
         },
         "Twitter Icon": {
-            "isCollection": false,
             "selector": "span.icon-sd-twitter"
         },
         "LinkedIn Icon": {
-            "isCollection": false,
             "selector": "span.icon-sd-linkedin"
         },
         "Instagram Icon": {
-            "isCollection": false,
             "selector": "span.icon-sd-instagram"
         },
         "Pinterest Icon": {
-            "isCollection": false,
             "selector": "span.icon-sd-pinterest"
         },
         "Search Container": {

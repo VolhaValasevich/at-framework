@@ -1,9 +1,8 @@
 {
     "isCollection": true,
-    "selector": "#d1-menu > ul > li > a", 
+    "selector": "#d1-menu > ul > li > a",
     "children": {
         "Submenu": {
-            "isCollection": false,
             "selector": "ul.dl-submenu",
             "children": {
                 "Submenu Links": {
