@@ -1,7 +1,9 @@
 {
     "name": "Home Page",
     "url": "/home",
-    "Header": {
-        "ref": "./test/e2e/po/components/header.json"
+    "children": {
+        "Header": {
+            "ref": "./test/e2e/po/components/header.json"
+        }
     }
 }

@@ -11,9 +11,9 @@ class POCollector {
             const ref = require(path.resolve(obj.ref));
             obj = ref;
         }
-        if (typeof obj === 'object') {
-            Object.keys(obj).forEach((key) => {
-                obj[key] = this.getReferences(obj[key]);
+        if (obj.children !== undefined) {
+            Object.keys(obj.children).forEach((key) => {
+                obj.children[key] = this.getReferences(obj.children[key]);
             });
         }
         return obj;

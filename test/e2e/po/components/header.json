@@ -1,10 +1,12 @@
 {
     "isCollection": false,
     "selector": "header",
-    "Country Bar": {
-        "ref": "./test/e2e/po/components/countryBar.json"
-    },
-    "Navigation Bar": {
-        "ref": "./test/e2e/po/components/navigationBar.json"  
+    "children": {
+        "Country Bar": {
+            "ref": "./test/e2e/po/components/countryBar.json"
+        },
+        "Navigation Bar": {
+            "ref": "./test/e2e/po/components/navigationBar.json"
+        }
     }
 }
