@@ -7,7 +7,7 @@
             "selector": "div.main-links",
             "children": {
                 "Main Links": {
-                    "ref": ""
+                    "ref": "./test/e2e/po/components/footerLinks.json"
                 }
             }
         },
@@ -16,13 +16,12 @@
             "selector": "div.secondary-links",
             "children": {
                 "Secondary Links": {
-                    "ref": ""
+                    "ref": "./test/e2e/po/components/footerLinks.json"
                 }
             }
-
         },
         "Solutions Links": {
-
+            "ref": "./test/e2e/po/components/solutionsLinks.json"
         }
     }
 }

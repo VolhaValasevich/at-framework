@@ -8,6 +8,9 @@
         "Slider Section": {
             "ref": "./test/e2e/po/components/sliderSection.json"
         },
+        "Functional Footer": {
+            "ref": "./test/e2e/po/components/footerFunctional.json"
+        },
         "Copyright Footer": {
             "ref": "./test/e2e/po/components/footerCopyright.json"
         }
