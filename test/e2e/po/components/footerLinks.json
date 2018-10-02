@@ -1,6 +1,6 @@
 {
     "isCollection": true,
-    "selector": "#d1-menu > ul > li > a",
+    "selector": "#dl-menu > ul > li > a",
     "children": {
         "Submenu": {
             "selector": "ul.dl-submenu",

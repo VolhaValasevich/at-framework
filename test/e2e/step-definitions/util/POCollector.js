@@ -8,8 +8,12 @@ class POCollector {
 
     getReferences(obj) {
         if (obj.ref !== undefined) {
+            const masterselector = obj.selector;
             const ref = require(path.resolve(obj.ref));
             obj = ref;
+            if (masterselector !== undefined) {
+                obj.selector = masterselector;
+            }
         }
         if (obj.children !== undefined) {
             Object.keys(obj.children).forEach((key) => {
