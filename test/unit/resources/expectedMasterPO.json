@@ -344,6 +344,130 @@
                     }
                 }
             },
+            "Product List": {
+                "selector": "div.productlist",
+                "children": {
+                    "Product Chooser": {
+                        "selector": "div.product-chooser",
+                        "children": {
+                            "Product Categories": {
+                                "isCollection": true,
+                                "selector": "div.product-category",
+                                "children": {
+                                    "Category Title": {
+                                        "selector": "h5.family-title"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "Results Bar": {
+                        "selector": "div.subnav",
+                        "children": {
+                            "Results Number": {
+                                "selector": "li > strong.ng-binding"
+                            },
+                            "Selected Category": {
+                                "selector": "span[ng-bind-html = 'selectedObj.family.title']"
+                            },
+                            "Remove Category Button": {
+                                "selector": "li[ng-if = 'selectedObj.family'] > i.icon-close"
+                            },
+                            "Selected Option": {
+                                "selector": "span[ng-bind-html = 'selectedObj.option.title']"
+                            },
+                            "Remove Option Button": {
+                                "selector": "li[ng-if = 'selectedObj.option'] > i.icon-close"
+                            }
+                        }
+                    },
+                    "Filter Panel": {
+                        "selector": "div.filter-panel > div.scrolly",
+                        "children": {
+                            "Product Type Filter": {
+                                "selector": "div.scrolly > div:first-of-type",
+                                "children": {
+                                    "Header": {
+                                        "selector": "h4"
+                                    },
+                                    "Mobile Storage Button": {
+                                        "selector": "input[name = '36']"
+                                    },
+                                    "Cards and Readers Button": {
+                                        "selector": "input[name = '39']"
+                                    },
+                                    "USB Button": {
+                                        "selector": "input[name = '42']"
+                                    },
+                                    "SSD Button": {
+                                        "selector": "input[name = '45']"
+                                    },
+                                    "MP3 Players Button": {
+                                        "selector": "input[name = '48']"
+                                    },
+                                    "Featured Items Button": {
+                                        "selector": "input[name = '51']"
+                                    },
+                                    "Product Type Labels": {
+                                        "isCollection": true,
+                                        "selector": "span[ng-bind-html = 'family.title']"
+                                    }
+                                }
+                            },
+                            "Option Filter": {
+                                "isCollection": true,
+                                "selector": "div.search-option",
+                                "children": {
+                                    "Header": {
+                                        "selector": "h4[ng-bind-html = 'list.title']"
+                                    },
+                                    "Options": {
+                                        "isCollection": true,
+                                        "selector": "span[ng-repeat = 'item in list.children'] > label",
+                                        "children": {
+                                            "Option Button": {
+                                                "selector": "input[type = 'radio']"
+                                            },
+                                            "Option Label": {
+                                                "selector": "span[ng-bind-html = 'item.title']"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "Results Panel": {
+                        "selector": "div.results-panel",
+                        "children": {
+                            "Search Results": {
+                                "isCollection": true,
+                                "selector": "div.search-result",
+                                "children": {
+                                    "Product Title": {
+                                        "selector": "h4[ng-bind-html = 'product.title']"
+                                    },
+                                    "Product Description": {
+                                        "selector": "p[ng-bind-html = 'product.description']"
+                                    },
+                                    "Product Capacity": {
+                                        "isCollection": true,
+                                        "selector": "span.capacity-label"
+                                    },
+                                    "Buy Now Button": {
+                                        "byLinkText": true,
+                                        "selector": "Buy Now"
+                                    },
+                                    "Learn More Button": {
+                                        "byLinkText": true,
+                                        "selector": "Learn More"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "Functional Footer": {
                 "selector": "div.functionalfooter > footer",
                 "children": {

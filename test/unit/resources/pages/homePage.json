@@ -8,6 +8,9 @@
         "Slider Section": {
             "ref": "./components/sliderSection.json"
         },
+        "Product List": {
+            "ref": "./components/productList/productList.json"
+        },
         "Functional Footer": {
             "ref": "./components/footer/footerFunctional.json"
         },
