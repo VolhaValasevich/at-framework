@@ -7,15 +7,14 @@ class POCollector {
     }
 
     getReferences(obj) {
-        if (obj.ref !== undefined) {
+        if (obj.ref) {
             const masterselector = obj.selector;
-            const ref = require(path.resolve(obj.ref));
-            obj = ref;
-            if (masterselector !== undefined) {
-                obj.selector = masterselector;
+            obj = JSON.parse(fs.readFileSync(path.resolve(obj.ref)))
+            if (masterselector) {
+                obj.selector = masterselector + obj.selector;
             }
         }
-        if (obj.children !== undefined) {
+        if (obj.children) {
             Object.keys(obj.children).forEach((key) => {
                 obj.children[key] = this.getReferences(obj.children[key]);
             });
