@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "unit": "node_modules\\.bin\\mocha ./dev"
+    "unit": "node_modules\\.bin\\mocha ./test/unit"
   },
   "dependencies": {
     "chai": "^4.1.2",
