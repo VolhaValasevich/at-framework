@@ -23,4 +23,10 @@ describe('Unit tests for Element Helper', () => {
         expect(result).to.be.eql(helper.masterPO.home);
     })
 
+    it('should search for an element by its full path', async() => {
+        await browser.get('https://www.sandisk.com/home')
+        const element = await helper.getPageElement('Header > Country Bar > Global Icon');
+        expect(element.selector).to.be.eql('span.icon-global')
+    })
+
 })

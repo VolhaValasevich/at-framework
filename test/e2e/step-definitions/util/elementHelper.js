@@ -8,15 +8,19 @@ class ElementHelper {
         this.baseUrl = baseUrl;
     }
 
-    getPageElement(fullElementPath) {
-
+    async getPageElement(fullElementPath) {
+        const elementPath = this.parsePath(fullElementPath);
+        let elementToGet = await this.getPageObject();
+        elementPath.forEach((alias) => {
+            elementToGet = elementToGet.children[alias];
+        })
+        return elementToGet;
     }
 
-    getPageObject() {
-        return browser.getCurrentUrl().then((url) => {
-            url = url.replace(this.baseUrl, '').replace('/', '');
-            return this.masterPO[url];
-        });
+    async getPageObject() {
+        let url = await browser.getCurrentUrl();
+        url = url.replace(this.baseUrl, '').replace('/', '');;
+        return this.masterPO[url];
     }
 
     parsePath(fullElementPath) {
