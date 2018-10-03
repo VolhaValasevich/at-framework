@@ -1,0 +1,23 @@
+{
+    "selector": "div.slider",
+    "children": {
+        "Slide Area": {
+            "selector": "div.slick-list",
+            "children": {
+                "Slides": {
+                    "isCollection": true,
+                    "selector": "div.slide"
+                }
+            }
+        },
+        "Dots Area": {
+            "selector": "ul.slick-dots",
+            "children": {
+                "Buttons": {
+                    "isCollection": true,
+                    "selector": "ul.slick-dots > li > button"
+                }
+            }
+        }
+    }
+}

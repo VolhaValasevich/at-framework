@@ -1,0 +1,88 @@
+{
+    "Main Page": {
+        "name": "Main Page",
+        "url": "",
+        "children": {
+            "Header": {
+                "selector": "header",
+                "children": {
+                    "Country Bar": {
+                        "selector": "#country",
+                        "children": {
+                            "Country Links": {
+                                "isCollection": true,
+                                "selector": "div.top-menu > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                            },
+                            "Retail Icon": {
+                                "selector": "span.icon-retail"
+                            },
+                            "Global Icon": {
+                                "selector": "span.icon-global"
+                            },
+                            "Search Icon": {
+                                "selector": "span.icon-search3"
+                            }
+                        }
+                    },
+                    "Navigation Bar": {
+                        "selector": "#navbar",
+                        "children": {
+                            "Navigation Links": {
+                                "isCollection": true,
+                                "selector": "div.nav-wrapper > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                            }
+                        }
+                    }
+                }
+            },
+            "Slider Section": {
+                "selector": "div.slider",
+                "children": {
+                    "Slide Area": {
+                        "selector": "div.slick-list",
+                        "children": {
+                            "Slides": {
+                                "isCollection": true,
+                                "selector": "div.slide"
+                            }
+                        }
+                    },
+                    "Dots Area": {
+                        "selector": "ul.slick-dots",
+                        "children": {
+                            "Buttons": {
+                                "isCollection": true,
+                                "selector": "ul.slick-dots > li > button"
+                            }
+                        }
+                    }
+                }
+            },
+            "Copyright Footer": {
+                "selector": "footer.copyright",
+                "children": {
+                    "Copyright Links Bar": {
+                        "selector": "div.sd-bg-red",
+                        "children": {
+                            "Copyright Links": {
+                                "isCollection": true,
+                                "selector": "ul.footer-links > li > a"
+                            },
+                            "Footer Logo": {
+                                "selector": "img.footer-logo"
+                            }
+                        }
+                    },
+                    "Copyright Text Bar": {
+                        "selector": "div.copyright-text",
+                        "children": {
+                            "Copyright Text": {
+                                "selector": "span.footer-copyright"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -6,6 +6,9 @@
   "directories": {
     "test": "test"
   },
+  "scripts": {
+    "unit": "node_modules\\.bin\\mocha ./dev"
+  },
   "dependencies": {
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
@@ -15,8 +18,8 @@
     "protractor": "^5.2.2",
     "protractor-cucumber-framework": "^4.1.1"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "mocha": "^5.2.0"
   },
   "keywords": [],
   "author": "",

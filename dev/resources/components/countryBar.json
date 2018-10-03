@@ -1,0 +1,18 @@
+{
+    "selector": "#country",
+    "children": {
+        "Country Links": {
+            "isCollection": true,
+            "selector": "div.top-menu > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+        },
+        "Retail Icon": {
+            "selector": "span.icon-retail"
+        },
+        "Global Icon": {
+            "selector": "span.icon-global"
+        },
+        "Search Icon": {
+            "selector": "span.icon-search3"
+        }
+    }
+}

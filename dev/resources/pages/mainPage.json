@@ -1,0 +1,15 @@
+{
+    "name": "Main Page",
+    "url": "",
+    "children": {
+        "Header": {
+            "ref": "./components/header.json"
+        },
+        "Slider Section": {
+            "ref": "./components/sliderSection.json"
+        },
+        "Copyright Footer": {
+            "ref": "./components/footerCopyright.json"
+        }
+    }
+}
