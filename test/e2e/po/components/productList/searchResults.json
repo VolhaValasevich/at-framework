@@ -11,6 +11,14 @@
         "Product Capacity": {
             "isCollection": true,
             "selector": "span.capacity-label"
+        },
+        "Buy Now Button": {
+            "byLinkText": true,
+            "selector": "Buy Now"
+        },
+        "Learn More Button": {
+            "byLinkText": true,
+            "selector": "Learn More"
         }
     }
 }
