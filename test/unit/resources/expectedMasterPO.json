@@ -1,4 +1,456 @@
 {
+    "About Page": {
+        "name": "About Page",
+        "url": "/about",
+        "children": {
+            "Header": {
+                "selector": "header",
+                "children": {
+                    "Country Bar": {
+                        "selector": "#country",
+                        "children": {
+                            "Country Links": {
+                                "isCollection": true,
+                                "selector": "div.top-menu > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                            },
+                            "Retail Icon": {
+                                "selector": "span.icon-retail"
+                            },
+                            "Global Icon": {
+                                "selector": "span.icon-global"
+                            },
+                            "Search Icon": {
+                                "selector": "span.icon-search3"
+                            }
+                        }
+                    },
+                    "Navigation Bar": {
+                        "selector": "#navbar",
+                        "children": {
+                            "Navigation Links": {
+                                "isCollection": true,
+                                "selector": "div.nav-wrapper > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                            }
+                        }
+                    }
+                }
+            },
+            "Functional Footer": {
+                "selector": "div.functionalfooter > footer",
+                "children": {
+                    "Main Links Section": {
+                        "selector": "div.main-links",
+                        "children": {
+                            "Main Links": {
+                                "isCollection": true,
+                                "selector": "div.main-links > #dl-menu > ul > li > a",
+                                "children": {
+                                    "Submenu": {
+                                        "selector": "ul.dl-submenu",
+                                        "children": {
+                                            "Submenu Links": {
+                                                "isCollection": true,
+                                                "selector": "ul.dl-submenu > li > a"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "Secondary Links Section": {
+                        "selector": "div.secondary-links",
+                        "children": {
+                            "Secondary Links": {
+                                "isCollection": true,
+                                "selector": "div.secondary-links > #dl-menu > ul > li > a",
+                                "children": {
+                                    "Submenu": {
+                                        "selector": "ul.dl-submenu",
+                                        "children": {
+                                            "Submenu Links": {
+                                                "isCollection": true,
+                                                "selector": "ul.dl-submenu > li > a"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "Solutions Links": {
+                        "selector": "div.solutions-links",
+                        "children": {
+                            "Stories Links": {
+                                "isCollection": true,
+                                "selector": "div.stories-links > div"
+                            },
+                            "Facebook Icon": {
+                                "selector": "span.icon-sd-facebook"
+                            },
+                            "Twitter Icon": {
+                                "selector": "span.icon-sd-twitter"
+                            },
+                            "LinkedIn Icon": {
+                                "selector": "span.icon-sd-linkedin"
+                            },
+                            "Instagram Icon": {
+                                "selector": "span.icon-sd-instagram"
+                            },
+                            "Pinterest Icon": {
+                                "selector": "span.icon-sd-pinterest"
+                            },
+                            "Search Container": {
+                                "selector": "form.search-container",
+                                "children": {
+                                    "Footer Search Bar": {
+                                        "selector": "#search-box-footer"
+                                    },
+                                    "Footer Search Submit Button": {
+                                        "selector": "input.go"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Copyright Footer": {
+                "selector": "footer.copyright",
+                "children": {
+                    "Copyright Links Bar": {
+                        "selector": "div.sd-bg-red",
+                        "children": {
+                            "Copyright Links": {
+                                "isCollection": true,
+                                "selector": "ul.footer-links > li > a"
+                            },
+                            "Footer Logo": {
+                                "selector": "img.footer-logo"
+                            }
+                        }
+                    },
+                    "Copyright Text Bar": {
+                        "selector": "div.copyright-text",
+                        "children": {
+                            "Copyright Text": {
+                                "selector": "span.footer-copyright"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "Business Page": {
+        "name": "Business Page",
+        "url": "/business",
+        "children": {
+            "Header": {
+                "selector": "header",
+                "children": {
+                    "Country Bar": {
+                        "selector": "#country",
+                        "children": {
+                            "Country Links": {
+                                "isCollection": true,
+                                "selector": "div.top-menu > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                            },
+                            "Retail Icon": {
+                                "selector": "span.icon-retail"
+                            },
+                            "Global Icon": {
+                                "selector": "span.icon-global"
+                            },
+                            "Search Icon": {
+                                "selector": "span.icon-search3"
+                            }
+                        }
+                    },
+                    "Navigation Bar": {
+                        "selector": "#navbar",
+                        "children": {
+                            "Navigation Links": {
+                                "isCollection": true,
+                                "selector": "div.nav-wrapper > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                            }
+                        }
+                    }
+                }
+            },
+            "Functional Footer": {
+                "selector": "div.functionalfooter > footer",
+                "children": {
+                    "Main Links Section": {
+                        "selector": "div.main-links",
+                        "children": {
+                            "Main Links": {
+                                "isCollection": true,
+                                "selector": "div.main-links > #dl-menu > ul > li > a",
+                                "children": {
+                                    "Submenu": {
+                                        "selector": "ul.dl-submenu",
+                                        "children": {
+                                            "Submenu Links": {
+                                                "isCollection": true,
+                                                "selector": "ul.dl-submenu > li > a"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "Secondary Links Section": {
+                        "selector": "div.secondary-links",
+                        "children": {
+                            "Secondary Links": {
+                                "isCollection": true,
+                                "selector": "div.secondary-links > #dl-menu > ul > li > a",
+                                "children": {
+                                    "Submenu": {
+                                        "selector": "ul.dl-submenu",
+                                        "children": {
+                                            "Submenu Links": {
+                                                "isCollection": true,
+                                                "selector": "ul.dl-submenu > li > a"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "Solutions Links": {
+                        "selector": "div.solutions-links",
+                        "children": {
+                            "Stories Links": {
+                                "isCollection": true,
+                                "selector": "div.stories-links > div"
+                            },
+                            "Facebook Icon": {
+                                "selector": "span.icon-sd-facebook"
+                            },
+                            "Twitter Icon": {
+                                "selector": "span.icon-sd-twitter"
+                            },
+                            "LinkedIn Icon": {
+                                "selector": "span.icon-sd-linkedin"
+                            },
+                            "Instagram Icon": {
+                                "selector": "span.icon-sd-instagram"
+                            },
+                            "Pinterest Icon": {
+                                "selector": "span.icon-sd-pinterest"
+                            },
+                            "Search Container": {
+                                "selector": "form.search-container",
+                                "children": {
+                                    "Footer Search Bar": {
+                                        "selector": "#search-box-footer"
+                                    },
+                                    "Footer Search Submit Button": {
+                                        "selector": "input.go"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Copyright Footer": {
+                "selector": "footer.copyright",
+                "children": {
+                    "Copyright Links Bar": {
+                        "selector": "div.sd-bg-red",
+                        "children": {
+                            "Copyright Links": {
+                                "isCollection": true,
+                                "selector": "ul.footer-links > li > a"
+                            },
+                            "Footer Logo": {
+                                "selector": "img.footer-logo"
+                            }
+                        }
+                    },
+                    "Copyright Text Bar": {
+                        "selector": "div.copyright-text",
+                        "children": {
+                            "Copyright Text": {
+                                "selector": "span.footer-copyright"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "Home Page": {
+        "name": "Home Page",
+        "url": "/home",
+        "children": {
+            "Header": {
+                "selector": "header",
+                "children": {
+                    "Country Bar": {
+                        "selector": "#country",
+                        "children": {
+                            "Country Links": {
+                                "isCollection": true,
+                                "selector": "div.top-menu > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                            },
+                            "Retail Icon": {
+                                "selector": "span.icon-retail"
+                            },
+                            "Global Icon": {
+                                "selector": "span.icon-global"
+                            },
+                            "Search Icon": {
+                                "selector": "span.icon-search3"
+                            }
+                        }
+                    },
+                    "Navigation Bar": {
+                        "selector": "#navbar",
+                        "children": {
+                            "Navigation Links": {
+                                "isCollection": true,
+                                "selector": "div.nav-wrapper > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                            }
+                        }
+                    }
+                }
+            },
+            "Slider Section": {
+                "selector": "div.slider",
+                "children": {
+                    "Slide Area": {
+                        "selector": "div.slick-list",
+                        "children": {
+                            "Slides": {
+                                "isCollection": true,
+                                "selector": "div.slide"
+                            }
+                        }
+                    },
+                    "Dots Area": {
+                        "selector": "ul.slick-dots",
+                        "children": {
+                            "Buttons": {
+                                "isCollection": true,
+                                "selector": "ul.slick-dots > li > button"
+                            }
+                        }
+                    }
+                }
+            },
+            "Functional Footer": {
+                "selector": "div.functionalfooter > footer",
+                "children": {
+                    "Main Links Section": {
+                        "selector": "div.main-links",
+                        "children": {
+                            "Main Links": {
+                                "isCollection": true,
+                                "selector": "div.main-links > #dl-menu > ul > li > a",
+                                "children": {
+                                    "Submenu": {
+                                        "selector": "ul.dl-submenu",
+                                        "children": {
+                                            "Submenu Links": {
+                                                "isCollection": true,
+                                                "selector": "ul.dl-submenu > li > a"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "Secondary Links Section": {
+                        "selector": "div.secondary-links",
+                        "children": {
+                            "Secondary Links": {
+                                "isCollection": true,
+                                "selector": "div.secondary-links > #dl-menu > ul > li > a",
+                                "children": {
+                                    "Submenu": {
+                                        "selector": "ul.dl-submenu",
+                                        "children": {
+                                            "Submenu Links": {
+                                                "isCollection": true,
+                                                "selector": "ul.dl-submenu > li > a"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "Solutions Links": {
+                        "selector": "div.solutions-links",
+                        "children": {
+                            "Stories Links": {
+                                "isCollection": true,
+                                "selector": "div.stories-links > div"
+                            },
+                            "Facebook Icon": {
+                                "selector": "span.icon-sd-facebook"
+                            },
+                            "Twitter Icon": {
+                                "selector": "span.icon-sd-twitter"
+                            },
+                            "LinkedIn Icon": {
+                                "selector": "span.icon-sd-linkedin"
+                            },
+                            "Instagram Icon": {
+                                "selector": "span.icon-sd-instagram"
+                            },
+                            "Pinterest Icon": {
+                                "selector": "span.icon-sd-pinterest"
+                            },
+                            "Search Container": {
+                                "selector": "form.search-container",
+                                "children": {
+                                    "Footer Search Bar": {
+                                        "selector": "#search-box-footer"
+                                    },
+                                    "Footer Search Submit Button": {
+                                        "selector": "input.go"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Copyright Footer": {
+                "selector": "footer.copyright",
+                "children": {
+                    "Copyright Links Bar": {
+                        "selector": "div.sd-bg-red",
+                        "children": {
+                            "Copyright Links": {
+                                "isCollection": true,
+                                "selector": "ul.footer-links > li > a"
+                            },
+                            "Footer Logo": {
+                                "selector": "img.footer-logo"
+                            }
+                        }
+                    },
+                    "Copyright Text Bar": {
+                        "selector": "div.copyright-text",
+                        "children": {
+                            "Copyright Text": {
+                                "selector": "span.footer-copyright"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
     "Main Page": {
         "name": "Main Page",
         "url": "",
@@ -53,6 +505,149 @@
                             "Buttons": {
                                 "isCollection": true,
                                 "selector": "ul.slick-dots > li > button"
+                            }
+                        }
+                    }
+                }
+            },
+            "Copyright Footer": {
+                "selector": "footer.copyright",
+                "children": {
+                    "Copyright Links Bar": {
+                        "selector": "div.sd-bg-red",
+                        "children": {
+                            "Copyright Links": {
+                                "isCollection": true,
+                                "selector": "ul.footer-links > li > a"
+                            },
+                            "Footer Logo": {
+                                "selector": "img.footer-logo"
+                            }
+                        }
+                    },
+                    "Copyright Text Bar": {
+                        "selector": "div.copyright-text",
+                        "children": {
+                            "Copyright Text": {
+                                "selector": "span.footer-copyright"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "OEM Design Page": {
+        "name": "OEM Design Page",
+        "url": "/oem-design",
+        "children": {
+            "Header": {
+                "selector": "header",
+                "children": {
+                    "Country Bar": {
+                        "selector": "#country",
+                        "children": {
+                            "Country Links": {
+                                "isCollection": true,
+                                "selector": "div.top-menu > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                            },
+                            "Retail Icon": {
+                                "selector": "span.icon-retail"
+                            },
+                            "Global Icon": {
+                                "selector": "span.icon-global"
+                            },
+                            "Search Icon": {
+                                "selector": "span.icon-search3"
+                            }
+                        }
+                    },
+                    "Navigation Bar": {
+                        "selector": "#navbar",
+                        "children": {
+                            "Navigation Links": {
+                                "isCollection": true,
+                                "selector": "div.nav-wrapper > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                            }
+                        }
+                    }
+                }
+            },
+            "Functional Footer": {
+                "selector": "div.functionalfooter > footer",
+                "children": {
+                    "Main Links Section": {
+                        "selector": "div.main-links",
+                        "children": {
+                            "Main Links": {
+                                "isCollection": true,
+                                "selector": "div.main-links > #dl-menu > ul > li > a",
+                                "children": {
+                                    "Submenu": {
+                                        "selector": "ul.dl-submenu",
+                                        "children": {
+                                            "Submenu Links": {
+                                                "isCollection": true,
+                                                "selector": "ul.dl-submenu > li > a"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "Secondary Links Section": {
+                        "selector": "div.secondary-links",
+                        "children": {
+                            "Secondary Links": {
+                                "isCollection": true,
+                                "selector": "div.secondary-links > #dl-menu > ul > li > a",
+                                "children": {
+                                    "Submenu": {
+                                        "selector": "ul.dl-submenu",
+                                        "children": {
+                                            "Submenu Links": {
+                                                "isCollection": true,
+                                                "selector": "ul.dl-submenu > li > a"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "Solutions Links": {
+                        "selector": "div.solutions-links",
+                        "children": {
+                            "Stories Links": {
+                                "isCollection": true,
+                                "selector": "div.stories-links > div"
+                            },
+                            "Facebook Icon": {
+                                "selector": "span.icon-sd-facebook"
+                            },
+                            "Twitter Icon": {
+                                "selector": "span.icon-sd-twitter"
+                            },
+                            "LinkedIn Icon": {
+                                "selector": "span.icon-sd-linkedin"
+                            },
+                            "Instagram Icon": {
+                                "selector": "span.icon-sd-instagram"
+                            },
+                            "Pinterest Icon": {
+                                "selector": "span.icon-sd-pinterest"
+                            },
+                            "Search Container": {
+                                "selector": "form.search-container",
+                                "children": {
+                                    "Footer Search Bar": {
+                                        "selector": "#search-box-footer"
+                                    },
+                                    "Footer Search Submit Button": {
+                                        "selector": "input.go"
+                                    }
+                                }
                             }
                         }
                     }

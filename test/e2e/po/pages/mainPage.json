@@ -3,13 +3,13 @@
     "url": "",
     "children": {
         "Header": {
-            "ref": "./components/header.json"
+            "ref": "./components/header/header.json"
         },
         "Slider Section": {
             "ref": "./components/sliderSection.json"
         },
         "Copyright Footer": {
-            "ref": "./components/footerCopyright.json"
+            "ref": "./components/footer/footerCopyright.json"
         }
     }
 }
