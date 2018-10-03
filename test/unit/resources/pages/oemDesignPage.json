@@ -1,6 +1,6 @@
 {
     "name": "OEM Design Page",
-    "url": "/oem-design",
+    "url": "oem-design",
     "children": {
         "Header": {
             "ref": "./components/header/header.json"

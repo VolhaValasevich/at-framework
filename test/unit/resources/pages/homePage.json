@@ -1,6 +1,6 @@
 {
     "name": "Home Page",
-    "url": "/home",
+    "url": "home",
     "children": {
         "Header": {
             "ref": "./components/header/header.json"

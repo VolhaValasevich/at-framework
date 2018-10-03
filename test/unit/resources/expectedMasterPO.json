@@ -1,7 +1,7 @@
 {
-    "About Page": {
+    "about": {
         "name": "About Page",
-        "url": "/about",
+        "url": "about",
         "children": {
             "Header": {
                 "selector": "header",
@@ -142,9 +142,9 @@
             }
         }
     },
-    "Business Page": {
+    "business": {
         "name": "Business Page",
-        "url": "/business",
+        "url": "business",
         "children": {
             "Header": {
                 "selector": "header",
@@ -285,9 +285,9 @@
             }
         }
     },
-    "Home Page": {
+    "home": {
         "name": "Home Page",
-        "url": "/home",
+        "url": "home",
         "children": {
             "Header": {
                 "selector": "header",
@@ -575,7 +575,7 @@
             }
         }
     },
-    "Main Page": {
+    "": {
         "name": "Main Page",
         "url": "",
         "children": {
@@ -661,9 +661,9 @@
             }
         }
     },
-    "OEM Design Page": {
+    "oem-design": {
         "name": "OEM Design Page",
-        "url": "/oem-design",
+        "url": "oem-design",
         "children": {
             "Header": {
                 "selector": "header",

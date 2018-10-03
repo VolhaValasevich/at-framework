@@ -28,7 +28,7 @@ class POCollector {
             if (page === 'MasterPO.json') return;
             let pageObj = require(path.resolve(dir, 'pages', page));
             pageObj = this.getReferences(dir, pageObj);
-            this.masterPO[pageObj.name] = pageObj;
+            this.masterPO[pageObj.url] = pageObj;
         })
     }
 
