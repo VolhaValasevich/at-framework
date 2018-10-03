@@ -6,28 +6,28 @@ class POCollector {
         this.masterPO = {};
     }
 
-    getReferences(obj) {
+    getReferences(dir, obj) {
         if (obj.ref) {
             const masterselector = obj.selector;
-            obj = JSON.parse(fs.readFileSync(path.resolve(obj.ref)))
+            obj = JSON.parse(fs.readFileSync(path.resolve(dir, obj.ref)))
             if (masterselector) {
                 obj.selector = masterselector + obj.selector;
             }
         }
         if (obj.children) {
             Object.keys(obj.children).forEach((key) => {
-                obj.children[key] = this.getReferences(obj.children[key]);
+                obj.children[key] = this.getReferences(dir, obj.children[key]);
             });
         }
         return obj;
     }
 
     getAllPages(dir) {
-        const pages = fs.readdirSync(path.resolve(dir));
+        const pages = fs.readdirSync(path.resolve(dir, 'pages'));
         pages.forEach((page) => {
             if (page === 'MasterPO.json') return;
-            let pageObj = require(path.resolve(dir, page));
-            pageObj = this.getReferences(pageObj);
+            let pageObj = require(path.resolve(dir, 'pages', page));
+            pageObj = this.getReferences(dir, pageObj);
             this.masterPO[pageObj.name] = pageObj;
         })
     }

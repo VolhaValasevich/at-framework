@@ -3,13 +3,13 @@
     "url": "",
     "children": {
         "Header": {
-            "ref": "./test/e2e/po/components/header.json"
+            "ref": "./components/header.json"
         },
         "Slider Section": {
-            "ref": "./test/e2e/po/components/sliderSection.json"
+            "ref": "./components/sliderSection.json"
         },
         "Copyright Footer": {
-            "ref": "./test/e2e/po/components/footerCopyright.json"
+            "ref": "./components/footerCopyright.json"
         }
     }
 }
