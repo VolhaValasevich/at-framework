@@ -35,6 +35,12 @@ class StepFunctions {
             return el.click();
         }) 
     }
+
+    getNumberOfElements(alias) {
+        return this.helper.getElement(alias).then((el) => {
+            return el.count();
+        })
+    }
 }
 
 module.exports = new StepFunctions();
