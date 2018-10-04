@@ -11,6 +11,9 @@
         "Product List": {
             "ref": "./components/productList/productList.json"
         },
+        "Subscribe Section": {
+            "ref":"./components/subscribeSection.json"
+        },
         "Functional Footer": {
             "ref": "./components/footer/footerFunctional.json"
         },
