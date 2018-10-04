@@ -8,6 +8,9 @@
         "Slider Section": {
             "ref": "./components/sliderSection.json"
         },
+        "Search Section": {
+            "ref": "./components/searchSection.json"
+        },
         "Copyright Footer": {
             "ref": "./components/footer/footerCopyright.json"
         }
