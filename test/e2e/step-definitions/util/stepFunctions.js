@@ -29,6 +29,12 @@ class StepFunctions {
             return el.getText();
         }) 
     }
+
+    click(alias) {
+        return this.helper.getElement(alias).then((el) => {
+            return el.click();
+        }) 
+    }
 }
 
 module.exports = new StepFunctions();
