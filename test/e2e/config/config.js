@@ -15,6 +15,7 @@ exports.config = {
     cucumberOpts: {
         require: [path.resolve('./test/e2e/step-definitions/**/*.js')],
         ignoreUncaughtExceptions: true,
+        format: 'json:./reports/report.json',
     },
     params: {
         PAGE_OBJECT_DIRECTORY: './test/e2e/po',
