@@ -29,7 +29,7 @@ describe('Step Functions', () => {
         expect(result).to.be.eql('Featured Items');
     })
 
-    fit('should send keys to an element', async() => {
+    it('should send keys to an element', async() => {
         await browser.get('https://www.sandisk.com/home');
         await step.sendKeys('Functional Footer > Solutions Links > Search Container > Footer Search Bar', 'disk');
         await step.sendKeys('Functional Footer > Solutions Links > Search Container > Footer Search Bar', protractor.Key.ENTER);
