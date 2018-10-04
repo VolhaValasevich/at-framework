@@ -10,11 +10,17 @@ class ElementHelper {
 
     async getElement(fullElementPath) {
         let elementToGet = await this.getPageObjectElement(fullElementPath);
+        let selector
+        if (elementToGet.byLinkText) {
+            selector = by.linkText(elementToGet.selector);
+        } else {
+            selector = by.css(elementToGet.selector);
+        }
         if (elementToGet.isCollection) {
-            elementToGet = element.all(by.css(elementToGet.selector));
+            elementToGet = element.all(selector);
             return elementToGet;
         } else {
-            elementToGet = element(by.css(elementToGet.selector));
+            elementToGet = element(selector);
             return elementToGet;
         }
     }
