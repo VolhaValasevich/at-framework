@@ -30,7 +30,7 @@ class ElementHelper {
 
     async getPageObject() {
         let url = await browser.getCurrentUrl();
-        url = url.replace(this.baseUrl, '').replace('/', '');;
+        url = url.replace(this.baseUrl, '').replace('/', '');
         return this.masterPO[url];
     }
 

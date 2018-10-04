@@ -13,7 +13,7 @@ describe('Step Functions', () => {
 
     it('should wait for an element', async() => {
         await browser.get('https://www.sandisk.com/home');
-        await step.waitUntilPresent('Product List > Results Bar > Selected Category');
+        await step.waitUntil('Product List > Results Bar > Selected Category', 'present');
         const result = await step.isElementPresent('Product List > Results Bar > Selected Category');
         expect(result).to.be.true;
     })
