@@ -8,7 +8,18 @@ class ElementHelper {
         this.baseUrl = baseUrl;
     }
 
-    async getPageElement(fullElementPath) {
+    async getElement(fullElementPath) {
+        let elementToGet = await this.getPageObjectElement(fullElementPath);
+        if (elementToGet.isCollection) {
+            elementToGet = element.all(by.css(elementToGet.selector));
+            return elementToGet;
+        } else {
+            elementToGet = element(by.css(elementToGet.selector));
+            return elementToGet;
+        }
+    }
+
+    async getPageObjectElement(fullElementPath) {
         const elementPath = this.parsePath(fullElementPath);
         let elementToGet = await this.getPageObject();
         elementPath.forEach((alias) => {

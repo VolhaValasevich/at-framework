@@ -25,8 +25,14 @@ describe('Unit tests for Element Helper', () => {
 
     it('should search for an element by its full path', async() => {
         await browser.get('https://www.sandisk.com/home')
-        const element = await helper.getPageElement('Header > Country Bar > Global Icon');
+        const element = await helper.getPageObjectElement('Header > Country Bar > Global Icon');
         expect(element.selector).to.be.eql('span.icon-global')
     })
 
+    it('should find element on the page and perform check', async() => {
+        await browser.get('https://www.sandisk.com/home');
+        const element = await helper.getElement('Header > Country Bar > Global Icon');
+        const result = await element.isPresent();
+        expect(result).to.be.true;
+    })
 })
