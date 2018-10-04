@@ -6,6 +6,10 @@ exports.config = {
         browserName: 'chrome'
     },
 
+    jasmineNodeOpts: {
+        defaultTimeoutInterval: 40000
+    },
+
     onPrepare: () => {
         browser.driver.manage().window().maximize();
     }

@@ -13,11 +13,21 @@ class StepFunctions {
     }
 
     waitUntilPresent(alias) {
-        browser.wait(until.presenceOf(this.helper.getElement(alias)), 30000);
+        return this.helper.getElement(alias).then((el) => {
+            return browser.wait(el, 30000);
+        })
     }
 
     sendKeys(alias, keys) {
-        this.helper.getElement(alias).sendKeys(keys);
+        return this.helper.getElement(alias).then((el) => {
+            return el.sendKeys(keys);
+        }) 
+    }
+
+    getText(alias) {
+        return this.helper.getElement(alias).then((el) => {
+            return el.getText();
+        }) 
     }
 }
 
