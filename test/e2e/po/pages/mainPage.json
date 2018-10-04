@@ -11,6 +11,9 @@
         "Search Section": {
             "ref": "./components/searchSection.json"
         },
+        "Main Section": {
+            "ref": "./components/mainSection.json"
+        },
         "Copyright Footer": {
             "ref": "./components/footer/footerCopyright.json"
         }
