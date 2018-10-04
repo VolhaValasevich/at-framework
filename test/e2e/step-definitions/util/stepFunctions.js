@@ -2,8 +2,8 @@ const ElementHelper = require('./elementHelper');
 const until = protractor.ExpectedConditions;
 
 class StepFunctions {
-    constructor(dir, url) {
-        this.helper = new ElementHelper(dir, url);
+    constructor() {
+        this.helper = ElementHelper;
     }
 
     isElementPresent(alias) {
@@ -31,4 +31,4 @@ class StepFunctions {
     }
 }
 
-module.exports = StepFunctions;
+module.exports = new StepFunctions();

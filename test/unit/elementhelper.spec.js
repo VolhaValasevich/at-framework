@@ -1,15 +1,9 @@
 'use strict'
 const chai =  require('chai');
 const expect = chai.expect;
-const ElementHelper = require('../e2e/step-definitions/util/elementHelper');
+const helper = require('../e2e/step-definitions/util/elementHelper');
 
 describe('Unit tests for Element Helper', () => {
-
-    let helper;
-
-    beforeAll(() => {
-        helper = new ElementHelper('./test/unit/resources', 'https://www.sandisk.com/');
-    })
 
     it('should trim a path to element', () => {
         const expectedResult = ['Home', 'Header', 'Navigation Bar'];

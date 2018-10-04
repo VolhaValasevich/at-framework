@@ -2,10 +2,10 @@ const collector = require('./POCollector');
 const path = require('path');
 
 class ElementHelper {
-    constructor(dir, baseUrl) {
-        collector.collectData(dir);
-        this.masterPO = require(path.resolve(dir, 'MasterPO.json'));
-        this.baseUrl = baseUrl;
+    constructor() {
+        collector.collectData(browser.params.PAGE_OBJECT_DIRECTORY);
+        this.masterPO = require(path.resolve(browser.params.PAGE_OBJECT_DIRECTORY, 'MasterPO.json'));
+        this.baseUrl = browser.params.BASE_URL;
     }
 
     async getElement(fullElementPath) {
@@ -41,4 +41,4 @@ class ElementHelper {
     }
 }
 
-module.exports = ElementHelper;
+module.exports = new ElementHelper();
