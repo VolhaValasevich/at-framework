@@ -8,8 +8,9 @@
   },
   "scripts": {
     "postinstall": "webdriver-manager update",
-    "unit": "protractor ./test/unit/config/conf.js",
-    "server": "./node_modules/.bin/webdriver-manager start"
+    "unit": "protractor ./test/unit/config/config.js",
+    "server": "./node_modules/.bin/webdriver-manager start",
+    "test": "protractor ./test/e2e/config/config.js"
   },
   "dependencies": {
     "chai": "^4.1.2",
