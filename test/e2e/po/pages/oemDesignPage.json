@@ -5,6 +5,9 @@
         "Header": {
             "ref": "./components/header/header.json"
         },
+        "Hero Section": {
+            "ref": "./components/heroSection.json"
+        },
         "Functional Footer": {
             "ref": "./components/footer/footerFunctional.json"
         },
