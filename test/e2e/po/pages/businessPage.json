@@ -8,6 +8,12 @@
         "Hero Section": {
             "ref": "./components/heroSection.json"
         },
+        "Title Section": {
+            "ref": "./components/titleSection.json"
+        },
+        "Enterprise Section": {
+            "ref": "./components/enterpriseSection.json"
+        },
         "Functional Footer": {
             "ref": "./components/footer/footerFunctional.json"
         },
