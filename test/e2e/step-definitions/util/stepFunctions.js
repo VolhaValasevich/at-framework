@@ -70,6 +70,17 @@ class StepFunctions {
             return el.count();
         })
     }
+
+    getElementFromCollectionByText(alias, text) {
+        return this.helper.getElement(alias).then(async(collection) => {
+            for (let i = 0; i < collection.length; i++) {
+                const elementtext = await collection[i].getText();
+                if (text === elementtext) {
+                    return collection[i];
+                }
+            }
+        })
+    }
 }
 
 module.exports = new StepFunctions();
