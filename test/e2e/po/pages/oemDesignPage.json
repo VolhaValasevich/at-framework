@@ -8,6 +8,9 @@
         "Hero Section": {
             "ref": "./components/heroSection.json"
         },
+        "Solutions Section": {
+            "ref": "./components/solutionsSection.json"
+        },
         "Where To Buy Section": {
             "ref": "./components/whereToBuySection.json"
         },
