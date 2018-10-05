@@ -37,4 +37,9 @@ describe('Step Functions', () => {
         const text = await element.getText();
         expect(text).to.be.eql('SSD');
     })
+
+    it('should get element count', async() => {
+        const number = await step.getNumberOfElements('Header > Navigation Bar > Navigation Links');
+        expect(number).to.be.eql(8);
+    })
 })

@@ -67,7 +67,7 @@ class StepFunctions {
 
     getNumberOfElements(alias) {
         return this.helper.getElement(alias).then((el) => {
-            return el.count();
+            return el.length;
         })
     }
 
