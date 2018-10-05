@@ -8,6 +8,9 @@
         "Hero Section": {
             "ref": "./components/heroSection.json"
         },
+        "Where To Buy Section": {
+            "ref": "./components/whereToBuySection.json"
+        },
         "Functional Footer": {
             "ref": "./components/footer/footerFunctional.json"
         },
