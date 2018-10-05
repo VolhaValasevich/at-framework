@@ -14,6 +14,9 @@
         "Enterprise Section": {
             "ref": "./components/enterpriseSection.json"
         },
+        "Contacts Section": {
+            "ref": "./components/contactsSection.json"
+        },
         "Functional Footer": {
             "ref": "./components/footer/footerFunctional.json"
         },
