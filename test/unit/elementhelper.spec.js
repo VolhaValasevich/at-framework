@@ -19,8 +19,9 @@ describe('Unit tests for Element Helper', () => {
 
     it('should search for an element by its full path', async() => {
         await browser.get('https://www.sandisk.com/home')
-        const element = await helper.getPageObjectElement('Header > Country Bar > Global Icon');
-        expect(element.selector).to.be.eql('span.icon-global')
+        const element = await helper.getElement('Header > Country Bar > Global Icon');
+        const tag = await element.getTagName();
+        expect(tag).to.be.eql('span')
     })
 
     it('should find element on the page and perform check', async() => {
@@ -28,5 +29,12 @@ describe('Unit tests for Element Helper', () => {
         const element = await helper.getElement('Header > Country Bar > Global Icon');
         const result = await element.isPresent();
         expect(result).to.be.true;
+    })
+
+    it('should find an element from collection by its number', async() => {
+        await browser.get('https://www.sandisk.com/home');
+        const element = await helper.getElement('Header > Navigation Bar > Navigation Links #3');
+        const text = await element.getText();
+        expect(text).to.be.eql('USB FLASH');
     })
 })

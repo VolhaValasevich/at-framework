@@ -9,29 +9,29 @@ class ElementHelper {
     }
 
     async getElement(fullElementPath) {
-        let elementToGet = await this.getPageObjectElement(fullElementPath);
-        let selector
-        if (elementToGet.byLinkText) {
-            selector = by.linkText(elementToGet.selector);
-        } else {
-            selector = by.css(elementToGet.selector);
-        }
-        if (elementToGet.isCollection) {
-            elementToGet = element.all(selector);
-            return elementToGet;
-        } else {
-            elementToGet = element(selector);
-            return elementToGet;
-        }
-    }
-
-    async getPageObjectElement(fullElementPath) {
         const elementPath = this.parsePath(fullElementPath);
-        let elementToGet = await this.getPageObject();
+        let pageObject = await this.getPageObject();
+        let elementToGet = await element(by.css('html'));
         elementPath.forEach((alias) => {
-            elementToGet = elementToGet.children[alias];
+            let number = alias.match(/#\d+/);
+            if (number) {
+                number = number[0].substring(1);
+                alias = alias.replace(/#\d+/, '').trim();
+            }
+            pageObject = pageObject.children[alias];
+            elementToGet = this.getChildElement(elementToGet, pageObject, number);
         })
         return elementToGet;
+    }
+
+    getChildElement(elementToGet, pageObject, number) {
+        if (number !== null) {
+            return elementToGet.all(by.css(pageObject.selector)).then((array) => { return array[number - 1] });
+        } else if (pageObject.isCollection) {
+            return elementToGet.all(by.css(pageObject.selector));
+        } else {
+            return elementToGet.element(by.css(pageObject.selector));
+        }        
     }
 
     async getPageObject() {
