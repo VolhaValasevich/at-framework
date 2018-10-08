@@ -10,3 +10,9 @@ Feature: Main Page
     When I wait until "Header > Navigation Bar" is present
     And I click "FOR HOME" text in "Header > Navigation Bar > Navigation Links"
     Then "Product List" should be visible
+
+    Scenario: Verify user can click on a navigation link by number
+    Given I open "https://www.sandisk.com/" url
+    When I wait until "Header > Navigation Bar" is present
+    And I click "Header > Navigation Bar > Navigation Links #2"
+    Then Page title should be "For Business - Sandisk Flash Storage Solutions"
