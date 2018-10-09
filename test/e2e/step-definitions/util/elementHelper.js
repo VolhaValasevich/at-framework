@@ -15,7 +15,7 @@ class ElementHelper {
         elementPath.forEach((alias) => {
             let number = alias.match(/#\d+/);
             if (number) {
-                number = number[0].substring(1);
+                number = number[0].substring(1);    //string.match returns an array if there's a match; substring deletes #
                 alias = alias.replace(/#\d+/, '').trim();
             }
             pageObject = pageObject.children[alias];
@@ -25,8 +25,8 @@ class ElementHelper {
     }
 
     getChildElement(elementToGet, pageObject, number) {
-        if (number !== null) {
-            return elementToGet.all(by.css(pageObject.selector)).then((array) => { return array[number - 1] });
+        if (number !== null) {  //string.match returns null if there's no match
+            return elementToGet.all(by.css(pageObject.selector)).get(number - 1);
         } else if (pageObject.isCollection) {
             return elementToGet.all(by.css(pageObject.selector));
         } else {

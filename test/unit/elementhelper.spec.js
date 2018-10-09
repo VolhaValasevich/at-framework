@@ -3,6 +3,7 @@ const chai =  require('chai');
 const expect = chai.expect;
 const helper = require('../e2e/step-definitions/util/elementHelper');
 
+
 describe('Unit tests for Element Helper', () => {
 
     it('should trim a path to element', () => {
@@ -31,10 +32,10 @@ describe('Unit tests for Element Helper', () => {
         expect(result).to.be.true;
     })
 
-    it('should find an element from collection by its number', async() => {
+    fit('should find an element from collection by its number', async() => {
         await browser.get('https://www.sandisk.com/home');
-        const element = await helper.getElement('Header > Navigation Bar > Navigation Links #3');
-        const text = await element.getText();
-        expect(text).to.be.eql('USB FLASH');
+        let el = await helper.getElement('Product List > Results Panel > Search Results #2 > Button #2');
+        const text = await el.getText();
+        expect(text).to.be.eql('Learn More');
     })
 })
