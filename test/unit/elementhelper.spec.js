@@ -32,7 +32,7 @@ describe('Unit tests for Element Helper', () => {
         expect(result).to.be.true;
     })
 
-    fit('should find an element from collection by its number', async() => {
+    it('should find an element from collection by its number', async() => {
         await browser.get('https://www.sandisk.com/home');
         let el = await helper.getElement('Product List > Results Panel > Search Results #2 > Button #2');
         const text = await el.getText();
