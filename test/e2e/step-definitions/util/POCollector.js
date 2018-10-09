@@ -9,7 +9,7 @@ class POCollector {
     getReferences(dir, obj) {
         if (obj.ref) {
             const masterselector = obj.selector;
-            obj = JSON.parse(fs.readFileSync(path.resolve(dir, obj.ref)))
+            obj = this.requireJson(path.resolve(dir, obj.ref));
             if (masterselector) {
                 obj.selector = masterselector + obj.selector;
             }
@@ -23,10 +23,17 @@ class POCollector {
     }
 
     getAllPages(dir) {
-        const pages = fs.readdirSync(path.resolve(dir, 'pages'));
+        let pages;
+        const fullPath = path.resolve(dir, 'pages');
+        try {
+            pages = fs.readdirSync(fullPath);
+        } catch (err) {
+            throw new Error(`Directory [${fullPath}] does not exist!`)
+        }
+        if (pages.length === 0) throw new Error(`Directory [${fullPath}] is empty!`)
         pages.forEach((page) => {
-            if (page === 'MasterPO.json') return;
-            let pageObj = require(path.resolve(dir, 'pages', page));
+            if (page === 'MasterPO.json' || path.extname(page) !== '.json') return;
+            let pageObj = this.requireJson(path.resolve(dir, 'pages', page));
             pageObj = this.getReferences(dir, pageObj);
             this.masterPO[pageObj.url] = pageObj;
         })
@@ -39,6 +46,16 @@ class POCollector {
     collectData(dir) {
         this.getAllPages(dir);
         this.saveMasterObject(dir);
+    }
+
+    requireJson(file) {
+        let string;
+        try {
+            string = fs.readFileSync(file);
+        } catch (err) {
+            throw new Error(`File [${file}] does not exist!`);
+        }
+        return JSON.parse(string);
     }
 }
 
