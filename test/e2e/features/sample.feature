@@ -16,3 +16,8 @@ Feature: Main Page
     When I wait until "Header > Navigation Bar" is present
     And I click "Header > Navigation Bar > Navigation Links #2"
     Then Page title should be "For Business - Sandisk Flash Storage Solutions"
+
+    Scenario: Verify user can click on a button by number
+    Given I open "https://www.sandisk.com/home" url
+    When I click "Product List > Results Panel > Search Results #2 > Button #2"
+    Then Page title should be "SanDisk iXpand Mini Flash Drive"

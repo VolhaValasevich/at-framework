@@ -42,4 +42,8 @@ describe('Step Functions', () => {
         const number = await step.getNumberOfElements('Header > Navigation Bar > Navigation Links');
         expect(number).to.be.eql(8);
     })
+
+    it('chould click on an element', async() => {
+        await step.click('Product List > Results Panel > Search Results #2 > Button #2');
+    })
 })
