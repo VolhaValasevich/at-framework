@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const util = require('util');
 
 class POCollector {
     constructor() {
@@ -14,6 +15,7 @@ class POCollector {
                 obj.selector = masterselector + obj.selector;
             }
         }
+        if (!obj.selector) throw new Error(`Object ${util.inspect(obj, false, null)} doesn't have a selector!`);
         if (obj.children) {
             Object.keys(obj.children).forEach((key) => {
                 obj.children[key] = this.getReferences(dir, obj.children[key]);

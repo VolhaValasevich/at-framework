@@ -2,6 +2,7 @@
     "about": {
         "name": "About Page",
         "url": "about",
+        "selector": "html",
         "children": {
             "Header": {
                 "selector": "header",
@@ -145,6 +146,7 @@
     "business": {
         "name": "Business Page",
         "url": "business",
+        "selector": "html",
         "children": {
             "Header": {
                 "selector": "header",
@@ -288,6 +290,7 @@
     "home": {
         "name": "Home Page",
         "url": "home",
+        "selector": "html",
         "children": {
             "Header": {
                 "selector": "header",
@@ -574,6 +577,7 @@
     "": {
         "name": "Main Page",
         "url": "",
+        "selector": "html",
         "children": {
             "Header": {
                 "selector": "header",
@@ -660,6 +664,7 @@
     "oem-design": {
         "name": "OEM Design Page",
         "url": "oem-design",
+        "selector": "html",
         "children": {
             "Header": {
                 "selector": "header",

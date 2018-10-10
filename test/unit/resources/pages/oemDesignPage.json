@@ -1,6 +1,7 @@
 {
     "name": "OEM Design Page",
     "url": "oem-design",
+    "selector": "html",
     "children": {
         "Header": {
             "ref": "./components/header/header.json"

@@ -1,6 +1,7 @@
 {
     "name": "Business Page",
     "url": "business",
+    "selector": "html",
     "children": {
         "Header": {
             "ref": "./components/header/header.json"
