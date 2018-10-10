@@ -1,5 +1,5 @@
 {
-    "selector": "div.subnav",
+    "selector": "div.product-display > div:nth-of-type(2)",
     "children": {
         "Results Number": {
             "selector": "li > strong.ng-binding"
