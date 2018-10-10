@@ -1,5 +1,6 @@
 const collector = require('./POCollector');
 const path = require('path');
+const util = require('util');
 
 class ElementHelper {
     constructor() {
@@ -15,14 +16,14 @@ class ElementHelper {
         elementPath.forEach((alias) => {
             let number = this.getNumberOfElement(alias);
             alias = alias.replace(/#\d+|first|second|last/, '').trim();
-            if (!pageObject.children[alias]) throw new Error(`No child element [${alias}] in ${pageObject}`); //unit
+            if (!pageObject.children[alias]) throw new Error(`No child element [${alias}] in ${util.inspect(pageObject, false, 1)}`); //unit
             pageObject = pageObject.children[alias];
             elementToGet = this.getChildElement(elementToGet, pageObject, number);
         })
         return elementToGet;
     }
 
-    getNumberOfElement(alias) {     //unit
+    getNumberOfElement(alias) {     
         let number = alias.match(/#\d+|first|second|last/);
         if (number) {
             switch (number[0]) {    //string.match returns an array if there's a match; substring deletes #
@@ -59,8 +60,8 @@ class ElementHelper {
 
     async getPageObject() {
         let url = await browser.getCurrentUrl();
-        url = url.replace(this.baseUrl, '').replace('/', '');   //change
-        if (!this.masterPO[url]) throw new Error(`No Page Object found for [${url}]!`) 
+        url = url.replace(this.baseUrl, '');  
+        if (!this.masterPO[url]) throw new Error(`No Page Object found for [${url}]!`);
         return this.masterPO[url];
     }
 
