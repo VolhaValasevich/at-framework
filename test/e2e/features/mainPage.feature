@@ -5,7 +5,7 @@ Feature: Main Page
         When I click "Slider Section > Buttons #<index>"
         And I wait until "Slider Section > Slides #<index>" is present
         Then Text of "Slider Section > Slides #<index> > Title" should equal <title>
-        And "Slider Section > Slides #3 > Button" should be visible
+        And "Slider Section > Slides #<index> > Button" should be visible
 
         Examples:
             | index | title                                              |
