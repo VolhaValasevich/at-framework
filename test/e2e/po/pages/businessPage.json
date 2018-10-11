@@ -1,6 +1,6 @@
 {
     "name": "Business Page",
-    "url": "business",
+    "url": "/business",
     "selector": "html",
     "children": {
         "Header": {

@@ -1,6 +1,6 @@
 {
     "name": "OEM Design Page",
-    "url": "oem-design",
+    "url": "/oem-design",
     "selector": "html",
     "children": {
         "Header": {

@@ -1,6 +1,6 @@
 {
     "name": "Home Page",
-    "url": "home",
+    "url": "/home",
     "selector": "html",
     "children": {
         "Header": {

@@ -60,7 +60,8 @@ class ElementHelper {
 
     async getPageObject() {
         let url = await browser.getCurrentUrl();
-        url = url.replace(this.baseUrl, '');  
+        if (url === this.baseUrl) url = '';
+        else url = url.replace(this.baseUrl, '\/').match(/(\/[a-z0-9-_]+)+/)[0];  
         if (!this.masterPO[url]) throw new Error(`No Page Object found for [${url}]!`);
         return this.masterPO[url];
     }

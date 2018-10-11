@@ -20,7 +20,7 @@ describe('Unit tests for Element Helper', () => {
 
     it('should search for a page object based on current url', async () => {
         const result = await helper.getPageObject();
-        expect(result).to.be.eql(helper.masterPO.home);
+        expect(result).to.be.eql(helper.masterPO['/home']);
     })
 
     it('should search for an element by its full path', async () => {
@@ -75,7 +75,7 @@ describe('Unit tests for Element Helper', () => {
 
         it('should throw an error if there is no page object for current url', async () => {
             await browser.get('https://www.sandisk.com/home/ssd/extreme-portable-ssd');
-            return expect(helper.getPageObject()).to.eventually.be.rejectedWith(Error, 'No Page Object found for [home/ssd/extreme-portable-ssd]!');
+            return expect(helper.getPageObject()).to.eventually.be.rejectedWith(Error, 'No Page Object found for [/home/ssd/extreme-portable-ssd]!');
         })
     })
 })
