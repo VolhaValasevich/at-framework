@@ -29,7 +29,10 @@
             }
         },
         "Next Button": {
-            "selector": "a.btn"
+            "selector": "a.btn[ng-click = 'nextClick()']"
+        },
+        "Previous Button": {
+            "selector": "a.btn[ng-click = 'prevClick()']"
         }
     }
 }
