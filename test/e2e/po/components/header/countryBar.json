@@ -11,8 +11,16 @@
         "Global Icon": {
             "selector": "span.icon-global"
         },
-        "Search Icon": {
-            "selector": "span.icon-search3"
+        "Search Container": {
+            "selector": "form.search-container",
+            "children": {
+                "Search Input": {
+                    "selector": "#search-box"
+                },
+                "Search Icon": {
+                    "selector": "span.icon-search3"
+                }
+            }
         }
     }
 }

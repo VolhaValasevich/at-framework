@@ -11,3 +11,8 @@ When(/^I click "([^"]*)" text in "([^"]*)"$/, (text, alias) => {
         el.click();
     })
 });
+
+When(/^I type "([^"]*)" in "([^"]*)"$/, (text, alias) => {
+    if (text === 'ENTER') text = protractor.Key.ENTER;
+    return step.sendKeys(alias, text);
+});
