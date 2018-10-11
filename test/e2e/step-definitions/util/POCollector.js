@@ -30,7 +30,7 @@ class POCollector {
         try {
             pages = fs.readdirSync(fullPath);
         } catch (err) {
-            throw new Error(`Directory [${fullPath}] does not exist!`)
+            throw new Error(`Directory [${fullPath}] does not exist!`);
         }
         if (pages.length === 0) throw new Error(`Directory [${fullPath}] is empty!`)
         pages.forEach((page) => {

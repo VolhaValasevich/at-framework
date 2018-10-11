@@ -16,7 +16,7 @@ class ElementHelper {
         elementPath.forEach((alias) => {
             let number = this.getNumberOfElement(alias);
             alias = alias.replace(/#\d+|first|second|last/, '').trim();
-            if (!pageObject.children[alias]) throw new Error(`No child element [${alias}] in ${util.inspect(pageObject, false, 1)}`); //unit
+            if (!pageObject.children[alias]) throw new Error(`No child element [${alias}] in ${util.inspect(pageObject, false, 1)}`);
             pageObject = pageObject.children[alias];
             elementToGet = this.getChildElement(elementToGet, pageObject, number);
         })
