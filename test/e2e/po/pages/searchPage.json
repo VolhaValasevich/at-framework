@@ -14,6 +14,9 @@
         },
         "Copyright Footer": {
             "ref": "./components/footer/footerCopyright.json"
+        },
+        "On Top Button": {
+            "ref": "./components/onTopButton.json"
         }
     }
 }

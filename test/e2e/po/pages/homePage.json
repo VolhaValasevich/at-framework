@@ -12,11 +12,17 @@
         "Product List": {
             "ref": "./components/productList/productList.json"
         },
+        "Subscribe Section": {
+            "ref": "./components/subscribeSection.json"
+        },
         "Functional Footer": {
             "ref": "./components/footer/footerFunctional.json"
         },
         "Copyright Footer": {
             "ref": "./components/footer/footerCopyright.json"
+        },
+        "On Top Button": {
+            "ref": "./components/onTopButton.json"
         }
     }
 }
