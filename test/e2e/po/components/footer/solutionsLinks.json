@@ -3,7 +3,7 @@
     "children": {
         "Stories Links": {
             "isCollection": true,
-            "selector": "div.stories-links > div"
+            "selector": "div.stories-links a"
         },
         "Facebook Icon": {
             "selector": "span.icon-sd-facebook"
