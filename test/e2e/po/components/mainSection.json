@@ -5,7 +5,7 @@
             "selector": "#home"
         },
         "Business Button": {
-            "selector": "#businesss"
+            "selector": "#business"
         },
         "OEM Button": {
             "selector": "#oem"

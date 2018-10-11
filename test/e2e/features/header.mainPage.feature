@@ -15,25 +15,25 @@ Feature: Main Page Header
     Scenario Outline: Verify links in the navigation bar have correct titles
         Given I open "https://www.sandisk.com/" url
         When I wait until "Header > Navigation Bar" is present
-        Then Text of <element> should equal <text>
+        Then Text of "Header > Navigation Bar > Navigation Links #<index>" should equal <text>
 
         Examples:
-            | element                                         | text            |
-            | "Header > Navigation Bar > Navigation Links #1" | "FOR HOME"      |
-            | "Header > Navigation Bar > Navigation Links #2" | "FOR BUSINESS"  |
-            | "Header > Navigation Bar > Navigation Links #3" | "OEM DESIGN"    |
-            | "Header > Navigation Bar > Navigation Links #4" | "ABOUT SANDISK" |
-            | "Header > Navigation Bar > Navigation Links #5" | "SUPPORT"       |
+            | index | text            |
+            | 1     | "FOR HOME"      |
+            | 2     | "FOR BUSINESS"  |
+            | 3     | "OEM DESIGN"    |
+            | 4     | "ABOUT SANDISK" |
+            | 5     | "SUPPORT"       |
 
     Scenario Outline: Verify user can click on the links in the navigation bar
         Given I open "https://www.sandisk.com/" url
         When I wait until "Header > Navigation Bar" is present
-        And I click <element>
+        And I click "Header > Navigation Bar > Navigation Links #<index>"
         Then Page title should be <title>
 
         Examples:
-            | element                                         | title                                                       |
-            | "Header > Navigation Bar > Navigation Links #1" | "Global Leader in Flash Memory Storage Solutions \| SanDisk"|
-            | "Header > Navigation Bar > Navigation Links #2" | "For Business - Sandisk Flash Storage Solutions"            |
-            | "Header > Navigation Bar > Navigation Links #3" | "Sandisk - OEM Design Solutions"                            |
-            | "Header > Navigation Bar > Navigation Links #4" | "About SanDisk - Expanding the Possibilities of Storage"    |
+            | index | title                                                       |
+            | 1     | "Global Leader in Flash Memory Storage Solutions \| SanDisk"|
+            | 2     | "For Business - Sandisk Flash Storage Solutions"            |
+            | 3     | "Sandisk - OEM Design Solutions"                            |
+            | 4     | "About SanDisk - Expanding the Possibilities of Storage"    |
