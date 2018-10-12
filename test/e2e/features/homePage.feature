@@ -25,3 +25,9 @@ Feature: Home Page general tests
         When I remember number of "Product List > Results Panel > Search Results" as "$resultsNumber"
         And I click "Product List > Filter Panel > Option Filter #1 > Options #2 > Button"
         Then Count of "Product List > Results Panel > Search Results" should not be "$resultsNumber"
+
+    Scenario: User can view product page after clicking on a search result
+        Given I open "https://www.sandisk.com/home" url
+        When I remember page title as "$homePageTile"
+        And I click "Product List > Results Panel > Search Results #1 > Button #2"
+        Then Page title should not be "$homePageTile"

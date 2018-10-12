@@ -12,3 +12,8 @@ When(/^I remember number of "([^"]*)" as "([^"]*)"/, async(alias, key) => {
     const number = await step.getNumberOfElements(alias);
     memory.store(key, number);
 })
+
+When(/^I remember page title as "([^"]*)"/, async(key) => {
+    const text = await browser.getTitle();
+    memory.store(key, text);
+})
