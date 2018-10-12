@@ -24,7 +24,12 @@ Then(/^Count of "([^"]*)" should( not)? be "([^"]*)"$/, async (alias, notArg, ex
 Then(/^Text of "([^"]*)" should( not)? contain "([^"]*)"$/, async (alias, notArg, textToContain) => {
     notArg = notArg ? ' not' : '';
     let elementText = await step.getText(alias);
-    return expect(elementText.indexOf(textToContain)).to.not.equal(-1);    
+    if (notArg) {
+        return expect(elementText).to.not.contain(textToContain);   
+    }
+    else {
+        return expect(elementText).to.contain(textToContain);
+    }
 });
 
 Then(/^Text of "([^"]*)" should( not)? equal "([^"]*)"$/, async (alias, notArg, textToContain) => {
