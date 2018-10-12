@@ -19,7 +19,8 @@ exports.config = {
     },
     params: {
         PAGE_OBJECT_DIRECTORY: './test/e2e/po',
-        BASE_URL: 'https://www.sandisk.com/'
+        BASE_URL: 'https://www.sandisk.com/',
+        MEMORY: require('../step-definitions/util/memory')
     },
     onPrepare: () => {
         browser.manage().window().setSize(1000, 800);

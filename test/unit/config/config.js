@@ -8,7 +8,8 @@ exports.config = {
 
     params: {
         PAGE_OBJECT_DIRECTORY: './test/unit/resources',
-        BASE_URL: 'https://www.sandisk.com/'
+        BASE_URL: 'https://www.sandisk.com/',
+        MEMORY: require('../../e2e/step-definitions/util/memory')
     },
 
     jasmineNodeOpts: {
