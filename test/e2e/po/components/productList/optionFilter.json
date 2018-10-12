@@ -7,12 +7,12 @@
         },
         "Options": {
             "isCollection": true,
-            "selector": "span[ng-repeat = 'item in list.children'] > label",
+            "selector": "span > label",
             "children": {
-                "Option Button": {
+                "Button": {
                     "selector": "input[type = 'radio']"
                 },
-                "Option Label": {
+                "Label": {
                     "selector": "span[ng-bind-html = 'item.title']"
                 }
             }

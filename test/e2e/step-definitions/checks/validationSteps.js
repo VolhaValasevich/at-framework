@@ -6,7 +6,6 @@ const memory = browser.params.MEMORY;
 
 Then(/^"([^"]*)" should( not)? be visible$/, async (alias, notArg) => {
     if (memory.isKey(alias)) alias = memory.get(alias);
-    if (memory.isKey(notArg)) notArg = memory.get(notArg);
     notArg = notArg ? ' not' : '';
     let result = await step.isElementPresent(alias);
     return expect(result).to.be.equal(!notArg);
@@ -14,7 +13,6 @@ Then(/^"([^"]*)" should( not)? be visible$/, async (alias, notArg) => {
 
 Then(/^Count of "([^"]*)" should( not)? be "([^"]*)"$/, async (alias, notArg, expectedNumber) => {
     if (memory.isKey(alias)) alias = memory.get(alias);
-    if (memory.isKey(notArg)) notArg = memory.get(notArg);
     if (memory.isKey(expectedNumber)) expectedNumber = memory.get(expectedNumber);
     notArg = notArg ? ' not' : '';
     let result = await step.getNumberOfElements(alias);
@@ -29,7 +27,6 @@ Then(/^Count of "([^"]*)" should( not)? be "([^"]*)"$/, async (alias, notArg, ex
 
 Then(/^Text of "([^"]*)" should( not)? contain "([^"]*)"$/, async (alias, notArg, textToContain) => {
     if (memory.isKey(alias)) alias = memory.get(alias);
-    if (memory.isKey(notArg)) notArg = memory.get(notArg);
     if (memory.isKey(textToContain)) textToContain = memory.get(textToContain);
     notArg = notArg ? ' not' : '';
     let elementText = await step.getText(alias);
@@ -43,7 +40,6 @@ Then(/^Text of "([^"]*)" should( not)? contain "([^"]*)"$/, async (alias, notArg
 
 Then(/^Text of "([^"]*)" should( not)? equal "([^"]*)"$/, async (alias, notArg, textToContain) => {
     if (memory.isKey(alias)) alias = memory.get(alias);
-    if (memory.isKey(notArg)) notArg = memory.get(notArg);
     if (memory.isKey(textToContain)) textToContain = memory.get(textToContain);
     notArg = notArg ? ' not' : '';
     let elementText = await step.getText(alias);
@@ -51,7 +47,6 @@ Then(/^Text of "([^"]*)" should( not)? equal "([^"]*)"$/, async (alias, notArg, 
 });
 
 Then(/^Page title should( not)? be "([^"]*)"$/, async (notArg, text) => {
-    if (memory.isKey(notArg)) notArg = memory.get(notArg);
     if (memory.isKey(text)) text = memory.get(text);
     notArg = notArg ? ' not' : '';
     let pageTitle = await browser.getTitle();
