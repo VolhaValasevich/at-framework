@@ -17,5 +17,11 @@ Feature: Home Page general tests
     Scenario: User can see results sorted by category
         Given I open "https://www.sandisk.com/home" url
         When I remember text of "Product List > Results Panel > Search Results #2 > Product Title" as "$productName"
-        Then I click "Product List > Filter Panel > Product Type Filter > Options #1 > Button"
+        And I click "Product List > Filter Panel > Product Type Filter > Options #1 > Button"
         Then Text of "Product List > Results Panel > Search Results #1 > Product Title" should equal "$productName"
+
+    Scenario: User can see results filtered by host
+        Given I open "https://www.sandisk.com/home" url
+        When I remember number of "Product List > Results Panel > Search Results" as "$resultsNumber"
+        And I click "Product List > Filter Panel > Option Filter #1 > Options #2 > Button"
+        Then Count of "Product List > Results Panel > Search Results" should not be "$resultsNumber"
