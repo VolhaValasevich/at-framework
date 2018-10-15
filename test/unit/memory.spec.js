@@ -16,12 +16,20 @@ describe('Memory tests', () => {
         expect(memory.isKey('key')).to.be.false;
     })
 
+    it('should recognize a number as not a key', () => {
+        expect(memory.isKey(5)).to.be.false;
+    })
+
     it('should parse string that is a key', () => {
         expect(memory.parseString('$key')).to.be.eql('key');
     })
 
     it('should parse string that is not a key', () => {
         expect(memory.parseString('key')).to.be.eql('key');
+    })
+
+    it('should return initial value when parsing a number', () => {
+        expect(memory.parseString(5)).to.be.eql(5);
     })
 
     it('should store value in memory by an unparsed key', () => {

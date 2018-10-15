@@ -4,12 +4,12 @@ class Memory {
     }
 
     isKey(string) {
-        if (string.match(/^\$[\w\s-]+/)) return true;
+        if (typeof string === 'string' && string.match(/^\$[\w\s-]+/)) return true;
         else return false;
     }
 
     parseString(string) {
-        if (string.match(/^\$[\w\s-]+/)) return string.substring(1);
+        if (typeof string === 'string' && string.match(/^\$[\w\s-]+/)) return string.substring(1);
         else return string;
     }
 
