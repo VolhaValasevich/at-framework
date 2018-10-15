@@ -14,7 +14,7 @@ function collectReports(dir) {
     const reports = fs.readdirSync(dir);
     const mainReport = [];
     reports.forEach((report) => {
-        if (report.match(/^^report\.\d+\.json$$/)) {
+        if (report.match(/^report\.\d+\.json$/)) {
             suite = require(path.resolve(dir, report));
             suite.forEach((feature) => {
                 mainReport.push(feature);
