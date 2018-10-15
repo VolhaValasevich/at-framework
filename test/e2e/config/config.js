@@ -9,7 +9,9 @@ exports.config = {
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
     capabilities: {
-        browserName: 'chrome'
+        browserName: 'chrome',
+        shardTestFiles: true,
+        maxInstances: 5
     },
     disableChecks: true,
     cucumberOpts: {

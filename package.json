@@ -11,6 +11,7 @@
     "postinstall": "webdriver-manager update",
     "unit": "protractor ./test/unit/config/config.js",
     "server": "./node_modules/.bin/webdriver-manager start",
+    "pretest": "rmdir /s /q reports && mkdir reports",
     "test": "protractor ./test/e2e/config/config.js || exit 0",
     "posttest": "node ./reporter.js"
   },
