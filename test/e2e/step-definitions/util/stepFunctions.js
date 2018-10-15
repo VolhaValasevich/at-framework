@@ -1,6 +1,7 @@
 const ElementHelper = require('./elementHelper');
 const until = protractor.ExpectedConditions;
 const EC = protractor.ExpectedConditions;
+const logger = require('./logger').logger;
 
 class StepFunctions {
     constructor() {
@@ -8,6 +9,7 @@ class StepFunctions {
     }
 
     isElementPresent(alias) {
+        logger.action(`Checking if [${alias}] is present`);
         return this.helper.getElement(alias).then((el) => {
             if (el.length) throw new Error('element is a collection');
             return el.isPresent();
@@ -44,6 +46,7 @@ class StepFunctions {
     }
 
     waitUntil(alias, shouldBe) {
+        logger.action(`Waiting until [${alias}] is ${shouldBe}`);
         const expectedConditionFunction = this.expectedCondition(shouldBe);
         return this.helper.getElement(alias).then((el) => {
             return browser.wait(expectedConditionFunction(el), 30000);
@@ -53,6 +56,7 @@ class StepFunctions {
     }
 
     sendKeys(alias, keys) {
+        logger.action(`Sending [${keys}] to [${alias}]`);
         return this.helper.getElement(alias).then((el) => {
             if (el.length) throw new Error('element is a collection');
             return el.sendKeys(keys);
@@ -62,6 +66,7 @@ class StepFunctions {
     }
 
     getText(alias) {
+        logger.action(`Getting text from [${alias}]`);
         return this.helper.getElement(alias).then((el) => {
             if (el.length) throw new Error('element is a collection');
             return el.getText();
@@ -71,6 +76,7 @@ class StepFunctions {
     }
 
     getAttribute(alias, attribute) {
+        logger.action(`Getting ${attribute} of [${alias}]`);
         return this.helper.getElement(alias).then((el) => {
             if (el.length) throw new Error('element is a collection');
             return el.getAttribute(attribute);
@@ -80,6 +86,7 @@ class StepFunctions {
     }
 
     click(alias) {
+        logger.action(`Clicking on [${alias}]`);
         return this.helper.getElement(alias).then((el) => {
             if (el.length) throw new Error('element is a collection');
             return el.click();
@@ -89,6 +96,7 @@ class StepFunctions {
     }
 
     getNumberOfElements(alias) {
+        logger.action(`Getting number of [${alias}]`);
         return this.helper.getElement(alias).then((el) => {
             if (!el.length) throw new Error('element is not a collection');
             return el.length;
@@ -98,6 +106,7 @@ class StepFunctions {
     }
 
     getElementFromCollectionByText(alias, text) {
+        logger.action(`Getting element with [${text}] text from [${alias}]`);
         return this.helper.getElement(alias).then(async(collection) => {
             if (!collection.length) throw new Error(`Cannot get element with text [${text}] - [${alias}] is not a collection!`);
             for (let i = 0; i < collection.length; i++) {

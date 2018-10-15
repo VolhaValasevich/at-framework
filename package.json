@@ -22,7 +22,8 @@
     "cucumber-html-reporter": "^3.0.4",
     "eslint": "^5.2.0",
     "protractor": "^5.2.2",
-    "protractor-cucumber-framework": "^4.1.1"
+    "protractor-cucumber-framework": "^4.1.1",
+    "winston": "^3.1.0"
   },
   "keywords": [],
   "author": "",
