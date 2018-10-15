@@ -16,7 +16,7 @@ const myCustomLevels = {
         error: 'red',
         warn: 'yellow',
         info: 'green',
-        action: 'white'
+        action: 'white' 
     }
 };
 
