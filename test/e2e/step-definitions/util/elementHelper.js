@@ -1,6 +1,7 @@
 const collector = require('./POCollector');
 const path = require('path');
 const util = require('util');
+const logger = require('./logger').logger;
 
 class ElementHelper {
     constructor() {
@@ -10,6 +11,7 @@ class ElementHelper {
     }
 
     async getElement(fullElementPath) {
+        logger.action(`Getting an element [${fullElementPath}]`);
         const elementPath = this.parsePath(fullElementPath);
         let pageObject = await this.getPageObject();
         let elementToGet = await element(by.css('html'));
@@ -60,6 +62,7 @@ class ElementHelper {
 
     async getPageObject() {
         let url = await browser.getCurrentUrl();
+        logger.action(`Getting Page Object for [${url}]`);
         if (url === this.baseUrl) url = '';
         else url = url.replace(this.baseUrl, '\/').match(/(\/[a-z0-9-_]+)+/)[0];  
         if (!this.masterPO[url]) throw new Error(`No Page Object found for [${url}]!`);

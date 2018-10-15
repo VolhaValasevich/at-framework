@@ -1,3 +1,5 @@
+const logger = require('./logger').logger;
+
 class Memory {
     constructor() {
         this.storage = {};
@@ -10,7 +12,8 @@ class Memory {
 
     store(key, value) {
         if (typeof key === 'string' && key.match(/^\$[\w\s-]+/)) key = key.substring(1);
-        if (this.storage[key]) console.log(`Overwriting ${key}: ${this.get(key)} with ${value}`);
+        if (this.storage[key]) logger.warn(`Overwriting ${key}: ${this.get(key)} with ${value}`);
+        logger.action(`Saving [${value}] as [$${key}]`);
         this.storage[key + browser.getSession()] = value;
     }
 
@@ -21,7 +24,8 @@ class Memory {
     }
 
     clean() {
-        this.storage = {}
+        this.storage = {};
+        logger.info('Memory was cleaned');
     }
 }
 
