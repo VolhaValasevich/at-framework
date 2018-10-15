@@ -1,6 +1,6 @@
 class Memory {
     constructor() {
-        this.storage = {}
+        this.storage = {};
     }
 
     parseString(string) {
@@ -10,10 +10,12 @@ class Memory {
 
     store(key, value) {
         if (typeof key === 'string' && key.match(/^\$[\w\s-]+/)) key = key.substring(1);
-        this.storage[key] = value;
+        if (this.storage[key]) console.log(`Overwriting ${key}: ${this.get(key)} with ${value}`);
+        this.storage[key + browser.getSession()] = value;
     }
 
     get(key) {
+        key += browser.getSession();
         if (!this.storage[key]) throw new Error(`No [${key}] object found in memory.`);
         return this.storage[key];
     }
