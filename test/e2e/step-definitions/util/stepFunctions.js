@@ -70,6 +70,15 @@ class StepFunctions {
         })  
     }
 
+    getAttribute(alias, attribute) {
+        return this.helper.getElement(alias).then((el) => {
+            if (el.length) throw new Error('element is a collection');
+            return el.getAttribute(attribute);
+        }).catch((err) => {
+            throw new Error(`Cannot get attribute [${attribute}] of [${alias}] - ${err.message}`);
+        })
+    }
+
     click(alias) {
         return this.helper.getElement(alias).then((el) => {
             if (el.length) throw new Error('element is a collection');

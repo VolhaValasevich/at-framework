@@ -17,3 +17,8 @@ When(/^I remember page title as "([^"]*)"/, async(key) => {
     const text = await browser.getTitle();
     memory.store(key, text);
 })
+
+When(/^I remember attribute "([^"]*)" of "([^"]*)" as "([^"]*)"/, async(attributeName, alias, key) => {
+    const attribute = await step.getAttribute(alias, attributeName);
+    memory.store(key, attribute);
+})

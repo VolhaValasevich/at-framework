@@ -17,7 +17,7 @@
             "selector": "input[name = 'unsubscribed']"
         },
         "Checkbox Error Message": {
-            "selector": "div.validate > span.error-message"
+            "selector": "div.selection > span.error-message"
         },
         "Sign Up Button": {
             "selector": "div.thirty button[type = 'submit']"

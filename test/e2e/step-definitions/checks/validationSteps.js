@@ -43,7 +43,26 @@ Then(/^Text of "([^"]*)" should( not)? equal "([^"]*)"$/, async (alias, notArg, 
     textToContain = memory.parseString(textToContain);
     notArg = notArg ? ' not' : '';
     let elementText = await step.getText(alias);
-    return expect(elementText).to.be.eql(textToContain);    
+    if (notArg) {
+        return expect(elementText).to.not.be.eql(textToContain);  
+    }
+    else {
+        return expect(elementText).to.be.eql(textToContain);  
+    }  
+});
+
+Then(/^Attribute "([^"]*)" of "([^"]*)" should( not)? be "([^"]*)"$/, async (attributeName, alias, notArg, expectedAttribute) => {
+    attributeName = memory.parseString(attributeName);
+    alias = memory.parseString(alias);
+    expectedAttribute = memory.parseString(expectedAttribute);
+    notArg = notArg ? ' not' : '';
+    let attribute = await step.getAttribute(alias, attributeName);
+    if (notArg) {
+        return expect(attribute).to.not.be.eql(expectedAttribute); 
+    }
+    else {
+        return expect(attribute).to.be.eql(expectedAttribute);
+    }     
 });
 
 Then(/^Page title should( not)? be "([^"]*)"$/, async (notArg, text) => {
