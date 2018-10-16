@@ -2,7 +2,7 @@
 
 const path = require('path');
 const yargs = require('yargs').argv;
-const getTags = require('../step-definitions/util/paramsParser');
+const { getTags, getCapabilities } = require('../step-definitions/util/paramsParser');
 
 exports.config = {
     allScriptsTimeout: 200000,
@@ -10,11 +10,7 @@ exports.config = {
     specs: [path.resolve('./test/e2e/features/*.feature')],
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
-    capabilities: {
-        browserName: 'chrome',
-        shardTestFiles: true,
-        maxInstances: 5
-    },
+    capabilities: getCapabilities(yargs),
     disableChecks: true,
     cucumberOpts: {
         require: [path.resolve('./test/e2e/step-definitions/**/*.js')],

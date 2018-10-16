@@ -1,10 +1,11 @@
 const logger = require('./logger').logger;
+const util = require('util');
 
 function getTags({ tags }) {
     let included = '';
     let excluded = '';
     if (tags) {
-        tags.split(',').forEach((element, index, array) => {
+        tags.split(',').forEach((element) => {
             element = element.trim();
             if (element.match(/^~?@\w+/) !== null) {
                 if (element.startsWith('~')) excluded += `${element},`;
@@ -19,4 +20,13 @@ function getTags({ tags }) {
     else return included;
 }
 
-module.exports = getTags;
+function getCapabilities({ browserName = 'chrome', maxInstances = 1 }) {
+    const capabilities = {};
+    capabilities.browserName = browserName;
+    capabilities.shardTestFiles = maxInstances > 1;
+    capabilities.maxInstances = maxInstances;
+    logger.info(`Browser started with capabilities: ${util.inspect(capabilities, false, null)}`);
+    return capabilities;
+}
+
+module.exports = { getTags, getCapabilities };
