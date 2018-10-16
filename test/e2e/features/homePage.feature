@@ -32,7 +32,7 @@ Feature: Home Page general tests
         And I click "Product List > Results Panel > Search Results #1 > Button #2"
         Then Page title should not be "$homePageTile"
 
-    Scenario: User can see an error messge if they didn't agree to Privacy Statement before subscribing
+    Scenario: User can see an error message if they didn't agree to Privacy Statement before subscribing
         Given I open "https://www.sandisk.com/home" url
         When I remember attribute "class" of "Subscribe Section > Checkbox Error Message" as "$checkboxErrorMessageClass"
         And I click "Subscribe Section > Sign Up Button"
