@@ -11,8 +11,8 @@ function getTags({ tags }) {
                 else included += `${element} or `;
             } else throw new Error(`Could not parse the tag [${element}]: all tags should start with @ and contain only word characters.`);
         });
-        included = (included.length > 0) ? included.slice(0, -4) : included;
-        excluded = (excluded.length > 0) ? excluded.slice(0, -1) : excluded;
+        if (included.length > 0) included = included.slice(0, -4);
+        if (excluded.length > 0) excluded = excluded.slice(0, -1);
     }
     logger.info(`Included tags: [${included}], excluded tags: [${excluded}]`);
     if (excluded.length > 0) return [excluded, included];
