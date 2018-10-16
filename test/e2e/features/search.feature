@@ -1,3 +1,4 @@
+@search
 Feature: Search Page
 
     Scenario: User can search for a keyword and see results

@@ -1,10 +1,13 @@
+@main @header
 Feature: Main Page Header
 
+    @topbar
     Scenario: Verify user can view global sites
         Given I open "https://www.sandisk.com/" url
         When I click "Header > Country Bar > Global Icon"
         Then Page title should be "SanDisk Global Sites"
 
+    @topbar
     Scenario: Verify user can perform search from the top bar
         Given I open "https://www.sandisk.com/" url
         When I click "Header > Country Bar > Search Container > Search Icon"
@@ -12,6 +15,7 @@ Feature: Main Page Header
         And I type "ENTER" in "Header > Country Bar > Search Container > Search Input"
         Then Page title should be "SanDisk Search Results"
 
+    @navbar
     Scenario Outline: Verify links in the navigation bar have correct titles
         Given I open "https://www.sandisk.com/" url
         When I wait until "Header > Navigation Bar" is present
@@ -25,6 +29,7 @@ Feature: Main Page Header
             | 4     | "ABOUT SANDISK" |
             | 5     | "SUPPORT"       |
 
+    @navbar
     Scenario Outline: Verify user can click on the links in the navigation bar
         Given I open "https://www.sandisk.com/" url
         When I wait until "Header > Navigation Bar" is present

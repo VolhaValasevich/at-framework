@@ -1,6 +1,8 @@
 'use strict';
 
 const path = require('path');
+const yargs = require('yargs').argv;
+const getTags = require('../step-definitions/util/paramsParser');
 
 exports.config = {
     allScriptsTimeout: 200000,
@@ -18,6 +20,7 @@ exports.config = {
         require: [path.resolve('./test/e2e/step-definitions/**/*.js')],
         ignoreUncaughtExceptions: true,
         format: 'json:./reports/report.json',
+        tags: getTags(yargs)
     },
     params: {
         PAGE_OBJECT_DIRECTORY: './test/e2e/po',

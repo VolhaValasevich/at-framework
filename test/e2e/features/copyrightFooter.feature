@@ -1,3 +1,4 @@
+@footer
 Feature: Copyright Footer
 
     Scenario Outline: Verify copyright links have correct text

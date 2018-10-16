@@ -1,5 +1,7 @@
+@main
 Feature: Main Page
 
+    @slider
     Scenario Outline: User can switch slides
         Given I open "https://www.sandisk.com/" url
         When I click "Slider Section > Buttons #<index>"
@@ -14,6 +16,7 @@ Feature: Main Page
             | 3     | "A NEW DIMENSION OF STORAGE"                       |
             | 4     | "INCREASE PRODUCTIVITY AND LOWER TCO IN THE CLOUD" |
 
+    @search
     Scenario: User can perform search in the main search bar
         Given I open "https://www.sandisk.com/" url
         When I type "text" in "Search Section > Search Input"
