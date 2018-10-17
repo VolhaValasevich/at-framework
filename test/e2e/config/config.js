@@ -1,7 +1,12 @@
 'use strict';
 
 const path = require('path');
-const yargs = require('yargs').argv;
+const yargs = require('yargs')
+    .alias({
+        't' : 'tags',
+        'b' : 'browserName',
+        'i' : 'maxInstances'
+    }).argv;
 const { getTags, getCapabilities } = require('../step-definitions/util/paramsParser');
 
 exports.config = {
