@@ -25,22 +25,25 @@ To run only selected features/scenarios, pass a string with tags as a command li
 - To exclude a tag, mark it with a ~ symbol.
 ```
 npm test -- --tags "@main, @home, ~@header"
+npm test -- -t "@main, @home, ~@header"
 ```
 
 #### Capabilities
 To run tests with certain capabilities, pass them as command line arguments.
 
 Available capabilities:
-- --browserName : defines what browser will be used for running tests. Default: 'chrome'.
-- --maxInstances : defines the number of WebDriver instances. Use this to run tests in parallel. Default: 1.
+- --browserName (-b): defines what browser will be used for running tests. Default: 'chrome'.
+- --maxInstances (-i): defines the number of WebDriver instances. Use this to run tests in parallel. Default: 1.
 
 ```
 npm test -- --browserName "chrome" --maxInstances 5
+npm test -- -b "chrome" -i 5
 ```
 
 You can pass both tags and capabilities as arguments:
 ```
 npm test -- --tags "@slider" --maxInstances 2
+npm test -- -t "@slider" -i 2
 ```
 
 ### Generate report
