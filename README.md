@@ -24,8 +24,8 @@ To run only selected features/scenarios, pass a string with tags as a command li
 - All tags should begin with @ and be separated with commas.
 - To exclude a tag, mark it with a ~ symbol.
 ```
-npm test -- --tags "@main, @home, ~@header"
-npm test -- -t "@main, @home, ~@header"
+npm test -- --tags "@main, ~@header"
+npm test -- -t "@main, ~@header"
 ```
 
 #### Capabilities
