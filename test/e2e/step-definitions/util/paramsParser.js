@@ -3,7 +3,7 @@ const util = require('util');
 
 function getTags({ tags }) {
     let result = [];
-    if (tags) {
+    if (typeof tags === 'string') {
         tags.split(',').forEach((element) => {
             element = element.trim();
             if (element.match(/^~?@\w+/) !== null) result.push(element);
