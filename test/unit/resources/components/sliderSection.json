@@ -1,23 +1,24 @@
 {
     "selector": "div.slider",
     "children": {
-        "Slide Area": {
-            "selector": "div.slick-list",
+        "Slides": {
+            "isCollection": true,
+            "selector": "div.slide",
             "children": {
-                "Slides": {
-                    "isCollection": true,
-                    "selector": "div.slide"
+                "Title": {
+                    "selector": "h1"
+                },
+                "Description": {
+                    "selector": "p"
+                },
+                "Button": {
+                    "selector": "a.btn"
                 }
             }
         },
-        "Dots Area": {
-            "selector": "ul.slick-dots",
-            "children": {
-                "Buttons": {
-                    "isCollection": true,
-                    "selector": "ul.slick-dots > li > button"
-                }
-            }
+        "Buttons": {
+            "isCollection": true,
+            "selector": "ul.slick-dots > li > button"
         }
     }
 }

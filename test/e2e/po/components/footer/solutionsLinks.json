@@ -21,7 +21,7 @@
             "selector": "span.icon-sd-pinterest"
         },
         "Search Container": {
-            "ref": "./components/footer/footerSearchContainer.json"
+            "ref": ["components", "footer", "footerSearchContainer.json"]
         }
     }
 }

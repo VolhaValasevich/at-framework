@@ -12,7 +12,7 @@
                         "children": {
                             "Country Links": {
                                 "isCollection": true,
-                                "selector": "div.top-menu > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                                "selector": "div.top-menu #bs-example-navbar-collapse-1 a"
                             },
                             "Retail Icon": {
                                 "selector": "span.icon-retail"
@@ -20,8 +20,16 @@
                             "Global Icon": {
                                 "selector": "span.icon-global"
                             },
-                            "Search Icon": {
-                                "selector": "span.icon-search3"
+                            "Search Container": {
+                                "selector": "form.search-container",
+                                "children": {
+                                    "Search Input": {
+                                        "selector": "#search-box"
+                                    },
+                                    "Search Icon": {
+                                        "selector": "span.icon-search3"
+                                    }
+                                }
                             }
                         }
                     },
@@ -30,7 +38,7 @@
                         "children": {
                             "Navigation Links": {
                                 "isCollection": true,
-                                "selector": "div.nav-wrapper > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                                "selector": "div.nav-wrapper #bs-example-navbar-collapse-1 a"
                             }
                         }
                     }
@@ -84,7 +92,7 @@
                         "children": {
                             "Stories Links": {
                                 "isCollection": true,
-                                "selector": "div.stories-links > div"
+                                "selector": "div.stories-links a"
                             },
                             "Facebook Icon": {
                                 "selector": "span.icon-sd-facebook"
@@ -140,6 +148,9 @@
                         }
                     }
                 }
+            },
+            "On Top Button": {
+                "selector": "a.back-top"
             }
         }
     },
@@ -156,7 +167,7 @@
                         "children": {
                             "Country Links": {
                                 "isCollection": true,
-                                "selector": "div.top-menu > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                                "selector": "div.top-menu #bs-example-navbar-collapse-1 a"
                             },
                             "Retail Icon": {
                                 "selector": "span.icon-retail"
@@ -164,8 +175,16 @@
                             "Global Icon": {
                                 "selector": "span.icon-global"
                             },
-                            "Search Icon": {
-                                "selector": "span.icon-search3"
+                            "Search Container": {
+                                "selector": "form.search-container",
+                                "children": {
+                                    "Search Input": {
+                                        "selector": "#search-box"
+                                    },
+                                    "Search Icon": {
+                                        "selector": "span.icon-search3"
+                                    }
+                                }
                             }
                         }
                     },
@@ -174,9 +193,74 @@
                         "children": {
                             "Navigation Links": {
                                 "isCollection": true,
-                                "selector": "div.nav-wrapper > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                                "selector": "div.nav-wrapper #bs-example-navbar-collapse-1 a"
                             }
                         }
+                    }
+                }
+            },
+            "Hero Section": {
+                "selector": "section.hero",
+                "children": {
+                    "Title": {
+                        "selector": "#hero-title > h1"
+                    },
+                    "Description": {
+                        "selector": "#hero-title > p"
+                    },
+                    "Link": {
+                        "selector": "#hero-title a"
+                    }
+                }
+            },
+            "Title Section": {
+                "selector": "div.titlesection",
+                "children": {
+                    "Title": {
+                        "selector": "div.panel-title > h2"
+                    },
+                    "Description": {
+                        "selector": "div.panel-title > p"
+                    }
+                }
+            },
+            "Enterprise Section": {
+                "selector": "section.ent-body",
+                "children": {
+                    "Solutions": {
+                        "isCollection": "true",
+                        "selector": "div.ent-box",
+                        "children": {
+                            "Title": {
+                                "selector": "div.ent-box h2"
+                            },
+                            "Description": {
+                                "selector": "div.ent-box p"
+                            },
+                            "Button": {
+                                "selector": "div.ent-box a"
+                            }
+                        }
+                    }
+                }
+            },
+            "Contacts Section": {
+                "selector": "#call",
+                "children": {
+                    "Title": {
+                        "selector": "#call div.panel-title > h2"
+                    },
+                    "Description": {
+                        "selector": "#call div.panel-title > p"
+                    },
+                    "Online Request Link": {
+                        "selector": "a[alt = 'Online Request']"
+                    },
+                    "Global Sales Contacts Link": {
+                        "selector": "a[alt = 'Global Sales Contacts']"
+                    },
+                    "Customer Care Link": {
+                        "selector": "a[alt = 'Customer Care']"
                     }
                 }
             },
@@ -228,7 +312,7 @@
                         "children": {
                             "Stories Links": {
                                 "isCollection": true,
-                                "selector": "div.stories-links > div"
+                                "selector": "div.stories-links a"
                             },
                             "Facebook Icon": {
                                 "selector": "span.icon-sd-facebook"
@@ -284,6 +368,9 @@
                         }
                     }
                 }
+            },
+            "On Top Button": {
+                "selector": "a.back-top"
             }
         }
     },
@@ -300,7 +387,7 @@
                         "children": {
                             "Country Links": {
                                 "isCollection": true,
-                                "selector": "div.top-menu > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                                "selector": "div.top-menu #bs-example-navbar-collapse-1 a"
                             },
                             "Retail Icon": {
                                 "selector": "span.icon-retail"
@@ -308,8 +395,16 @@
                             "Global Icon": {
                                 "selector": "span.icon-global"
                             },
-                            "Search Icon": {
-                                "selector": "span.icon-search3"
+                            "Search Container": {
+                                "selector": "form.search-container",
+                                "children": {
+                                    "Search Input": {
+                                        "selector": "#search-box"
+                                    },
+                                    "Search Icon": {
+                                        "selector": "span.icon-search3"
+                                    }
+                                }
                             }
                         }
                     },
@@ -318,7 +413,7 @@
                         "children": {
                             "Navigation Links": {
                                 "isCollection": true,
-                                "selector": "div.nav-wrapper > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                                "selector": "div.nav-wrapper #bs-example-navbar-collapse-1 a"
                             }
                         }
                     }
@@ -327,23 +422,24 @@
             "Slider Section": {
                 "selector": "div.slider",
                 "children": {
-                    "Slide Area": {
-                        "selector": "div.slick-list",
+                    "Slides": {
+                        "isCollection": true,
+                        "selector": "div.slide",
                         "children": {
-                            "Slides": {
-                                "isCollection": true,
-                                "selector": "div.slide"
+                            "Title": {
+                                "selector": "h1"
+                            },
+                            "Description": {
+                                "selector": "p"
+                            },
+                            "Button": {
+                                "selector": "a.btn"
                             }
                         }
                     },
-                    "Dots Area": {
-                        "selector": "ul.slick-dots",
-                        "children": {
-                            "Buttons": {
-                                "isCollection": true,
-                                "selector": "ul.slick-dots > li > button"
-                            }
-                        }
+                    "Buttons": {
+                        "isCollection": true,
+                        "selector": "ul.slick-dots > li > button"
                     }
                 }
             },
@@ -393,27 +489,17 @@
                                     "Header": {
                                         "selector": "h4"
                                     },
-                                    "Mobile Storage Button": {
-                                        "selector": "input[name = '36']"
-                                    },
-                                    "Cards and Readers Button": {
-                                        "selector": "input[name = '39']"
-                                    },
-                                    "USB Button": {
-                                        "selector": "input[name = '42']"
-                                    },
-                                    "SSD Button": {
-                                        "selector": "input[name = '45']"
-                                    },
-                                    "MP3 Players Button": {
-                                        "selector": "input[name = '48']"
-                                    },
-                                    "Featured Items Button": {
-                                        "selector": "input[name = '51']"
-                                    },
-                                    "Product Type Labels": {
+                                    "Options": {
                                         "isCollection": true,
-                                        "selector": "span[ng-bind-html = 'family.title']"
+                                        "selector": "span > label",
+                                        "children": {
+                                            "Button": {
+                                                "selector": "input[type = 'radio']"
+                                            },
+                                            "Label": {
+                                                "selector": "span[ng-bind-html = 'item.title']"
+                                            }
+                                        }
                                     }
                                 }
                             },
@@ -426,12 +512,12 @@
                                     },
                                     "Options": {
                                         "isCollection": true,
-                                        "selector": "span[ng-repeat = 'item in list.children'] > label",
+                                        "selector": "span > label",
                                         "children": {
-                                            "Option Button": {
+                                            "Button": {
                                                 "selector": "input[type = 'radio']"
                                             },
-                                            "Option Label": {
+                                            "Label": {
                                                 "selector": "span[ng-bind-html = 'item.title']"
                                             }
                                         }
@@ -467,6 +553,35 @@
                     }
                 }
             },
+            "Subscribe Section": {
+                "selector": "section.bordered.has-img",
+                "children": {
+                    "Header": {
+                        "selector": "div.sixtyfive h2"
+                    },
+                    "Description": {
+                        "selector": "div.sixtyfive p"
+                    },
+                    "Email Input": {
+                        "selector": "input[name = 'email']"
+                    },
+                    "Email Error Message": {
+                        "selector": "div.input > span.error-message"
+                    },
+                    "Agree To Terms Checkbox": {
+                        "selector": "input[name = 'unsubscribed']"
+                    },
+                    "Checkbox Error Message": {
+                        "selector": "div.selection > span.error-message"
+                    },
+                    "Sign Up Button": {
+                        "selector": "div.thirty button[type = 'submit']"
+                    },
+                    "Success Message": {
+                        "selector": "div.form-success > p"
+                    }
+                }
+            },
             "Functional Footer": {
                 "selector": "div.functionalfooter > footer",
                 "children": {
@@ -515,7 +630,7 @@
                         "children": {
                             "Stories Links": {
                                 "isCollection": true,
-                                "selector": "div.stories-links > div"
+                                "selector": "div.stories-links a"
                             },
                             "Facebook Icon": {
                                 "selector": "span.icon-sd-facebook"
@@ -571,6 +686,9 @@
                         }
                     }
                 }
+            },
+            "On Top Button": {
+                "selector": "a.back-top"
             }
         }
     },
@@ -587,7 +705,7 @@
                         "children": {
                             "Country Links": {
                                 "isCollection": true,
-                                "selector": "div.top-menu > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                                "selector": "div.top-menu #bs-example-navbar-collapse-1 a"
                             },
                             "Retail Icon": {
                                 "selector": "span.icon-retail"
@@ -595,8 +713,16 @@
                             "Global Icon": {
                                 "selector": "span.icon-global"
                             },
-                            "Search Icon": {
-                                "selector": "span.icon-search3"
+                            "Search Container": {
+                                "selector": "form.search-container",
+                                "children": {
+                                    "Search Input": {
+                                        "selector": "#search-box"
+                                    },
+                                    "Search Icon": {
+                                        "selector": "span.icon-search3"
+                                    }
+                                }
                             }
                         }
                     },
@@ -605,7 +731,7 @@
                         "children": {
                             "Navigation Links": {
                                 "isCollection": true,
-                                "selector": "div.nav-wrapper > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                                "selector": "div.nav-wrapper #bs-example-navbar-collapse-1 a"
                             }
                         }
                     }
@@ -614,21 +740,59 @@
             "Slider Section": {
                 "selector": "div.slider",
                 "children": {
-                    "Slide Area": {
-                        "selector": "div.slick-list",
+                    "Slides": {
+                        "isCollection": true,
+                        "selector": "div.slide",
                         "children": {
-                            "Slides": {
-                                "isCollection": true,
-                                "selector": "div.slide"
+                            "Title": {
+                                "selector": "h1"
+                            },
+                            "Description": {
+                                "selector": "p"
+                            },
+                            "Button": {
+                                "selector": "a.btn"
                             }
                         }
                     },
-                    "Dots Area": {
-                        "selector": "ul.slick-dots",
+                    "Buttons": {
+                        "isCollection": true,
+                        "selector": "ul.slick-dots > li > button"
+                    }
+                }
+            },
+            "Search Section": {
+                "selector": "section.search",
+                "children": {
+                    "Search Input": {
+                        "selector": "input[name = 'q'].form-control"
+                    },
+                    "Search Submit Button": {
+                        "selector": "button.btn-search"
+                    }
+                }
+            },
+            "Main Section": {
+                "selector": "section.main",
+                "children": {
+                    "Home Button": {
+                        "selector": "#home"
+                    },
+                    "Business Button": {
+                        "selector": "#business"
+                    },
+                    "OEM Button": {
+                        "selector": "#oem"
+                    },
+                    "Text Sections": {
+                        "isCollection": true,
+                        "selector": "div.third > div.text",
                         "children": {
-                            "Buttons": {
-                                "isCollection": true,
-                                "selector": "ul.slick-dots > li > button"
+                            "Header": {
+                                "selector": "div.third > div.text > h2"
+                            },
+                            "Description": {
+                                "selector": "div.third > div.text > p"
                             }
                         }
                     }
@@ -658,6 +822,9 @@
                         }
                     }
                 }
+            },
+            "On Top Button": {
+                "selector": "a.back-top"
             }
         }
     },
@@ -674,7 +841,7 @@
                         "children": {
                             "Country Links": {
                                 "isCollection": true,
-                                "selector": "div.top-menu > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                                "selector": "div.top-menu #bs-example-navbar-collapse-1 a"
                             },
                             "Retail Icon": {
                                 "selector": "span.icon-retail"
@@ -682,8 +849,16 @@
                             "Global Icon": {
                                 "selector": "span.icon-global"
                             },
-                            "Search Icon": {
-                                "selector": "span.icon-search3"
+                            "Search Container": {
+                                "selector": "form.search-container",
+                                "children": {
+                                    "Search Input": {
+                                        "selector": "#search-box"
+                                    },
+                                    "Search Icon": {
+                                        "selector": "span.icon-search3"
+                                    }
+                                }
                             }
                         }
                     },
@@ -692,7 +867,107 @@
                         "children": {
                             "Navigation Links": {
                                 "isCollection": true,
-                                "selector": "div.nav-wrapper > nav.navbar-default > #bs-example-navbar-collapse-1 > ul.nav > li > a"
+                                "selector": "div.nav-wrapper #bs-example-navbar-collapse-1 a"
+                            }
+                        }
+                    }
+                }
+            },
+            "Hero Section": {
+                "selector": "section.hero",
+                "children": {
+                    "Title": {
+                        "selector": "#hero-title > h1"
+                    },
+                    "Description": {
+                        "selector": "#hero-title > p"
+                    },
+                    "Link": {
+                        "selector": "#hero-title a"
+                    }
+                }
+            },
+            "Solutions Section": {
+                "selector": "section.small-top",
+                "children": {
+                    "Products Links": {
+                        "isCollection": true,
+                        "selector": "a.products-link h2"
+                    }
+                }
+            },
+            "Where To Buy Section": {
+                "selector": "#where-to-buy",
+                "children": {
+                    "Title": {
+                        "selector": "#where-to-buy h2"
+                    },
+                    "Description": {
+                        "selector": "#where-to-buy h3"
+                    },
+                    "Select Boxes": {
+                        "selector": "div.selectboxes",
+                        "children": {
+                            "Region Select Box": {
+                                "selector": "#region",
+                                "children": {
+                                    "Options": {
+                                        "isCollection": true,
+                                        "selector": "#region > option"
+                                    }
+                                }
+                            },
+                            "Country Select Box": {
+                                "selector": "#country-box",
+                                "children": {
+                                    "Options": {
+                                        "isCollection": true,
+                                        "selector": "#country-box > option"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "CheckBoxes": {
+                        "selector": "div.checkboxes",
+                        "children": {
+                            "Distributors Checkbox": {
+                                "selector": "#distributors-commercial-"
+                            },
+                            "VAR/Resellers Checkbox": {
+                                "selector": "#var-resellers"
+                            },
+                            "Representatives Checkbox": {
+                                "selector": "#representatives"
+                            }
+                        }
+                    },
+                    "Results Panel": {
+                        "selector": "div.results",
+                        "children": {
+                            "Results Number": {
+                                "selector": "div.results > h3"
+                            },
+                            "Results": {
+                                "isCollection": true,
+                                "selector": "div.address",
+                                "children": {
+                                    "Name": {
+                                        "selector": "h4[ng-if = '!reseller.Url']"
+                                    },
+                                    "Address": {
+                                        "selector": "div[ng-if = 'reseller.address'] span"
+                                    },
+                                    "Phone": {
+                                        "selector": "div[ng-if = 'reseller.phone'] span"
+                                    },
+                                    "Fax": {
+                                        "selector": "div[ng-if = 'reseller.fax'] span"
+                                    },
+                                    "Email": {
+                                        "selector": "div[ng-if = 'reseller.email'] a"
+                                    }
+                                }
                             }
                         }
                     }
@@ -746,7 +1021,7 @@
                         "children": {
                             "Stories Links": {
                                 "isCollection": true,
-                                "selector": "div.stories-links > div"
+                                "selector": "div.stories-links a"
                             },
                             "Facebook Icon": {
                                 "selector": "span.icon-sd-facebook"
@@ -802,6 +1077,133 @@
                         }
                     }
                 }
+            },
+            "On Top Button": {
+                "selector": "a.back-top"
+            }
+        }
+    },
+    "/tools/search": {
+        "name": "Search Page",
+        "url": "/tools/search",
+        "selector": "html",
+        "children": {
+            "Header": {
+                "selector": "header",
+                "children": {
+                    "Country Bar": {
+                        "selector": "#country",
+                        "children": {
+                            "Country Links": {
+                                "isCollection": true,
+                                "selector": "div.top-menu #bs-example-navbar-collapse-1 a"
+                            },
+                            "Retail Icon": {
+                                "selector": "span.icon-retail"
+                            },
+                            "Global Icon": {
+                                "selector": "span.icon-global"
+                            },
+                            "Search Container": {
+                                "selector": "form.search-container",
+                                "children": {
+                                    "Search Input": {
+                                        "selector": "#search-box"
+                                    },
+                                    "Search Icon": {
+                                        "selector": "span.icon-search3"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "Navigation Bar": {
+                        "selector": "#navbar",
+                        "children": {
+                            "Navigation Links": {
+                                "isCollection": true,
+                                "selector": "div.nav-wrapper #bs-example-navbar-collapse-1 a"
+                            }
+                        }
+                    }
+                }
+            },
+            "Search Section": {
+                "selector": "section.search",
+                "children": {
+                    "Search Input": {
+                        "selector": "input[name = 'q'].form-control"
+                    },
+                    "Search Submit Button": {
+                        "selector": "button.btn-search"
+                    }
+                }
+            },
+            "Search Results Section": {
+                "selector": "div.col-sm-12",
+                "children": {
+                    "Results Number": {
+                        "selector": "h2"
+                    },
+                    "Autosuggestion": {
+                        "selector": "p.didUmean",
+                        "children": {
+                            "Suggestions": {
+                                "isCollection": true,
+                                "selector": "a.pointer i.ng-binding"
+                            }
+                        }
+                    },
+                    "Results": {
+                        "isCollection": true,
+                        "selector": "div.search-result-item > a",
+                        "children": {
+                            "Title": {
+                                "selector": "h4.ng-binding"
+                            },
+                            "URL": {
+                                "selector": "p.search-url"
+                            },
+                            "Text": {
+                                "selector": "p:nth-of-type(2)"
+                            }
+                        }
+                    },
+                    "Next Button": {
+                        "selector": "a.btn[ng-click = 'nextClick()']"
+                    },
+                    "Previous Button": {
+                        "selector": "a.btn[ng-click = 'prevClick()']"
+                    }
+                }
+            },
+            "Copyright Footer": {
+                "selector": "footer.copyright",
+                "children": {
+                    "Copyright Links Bar": {
+                        "selector": "div.sd-bg-red",
+                        "children": {
+                            "Copyright Links": {
+                                "isCollection": true,
+                                "selector": "ul.footer-links > li > a"
+                            },
+                            "Footer Logo": {
+                                "selector": "img.footer-logo"
+                            }
+                        }
+                    },
+                    "Copyright Text Bar": {
+                        "selector": "div.copyright-text",
+                        "children": {
+                            "Copyright Text": {
+                                "selector": "span.footer-copyright"
+                            }
+                        }
+                    }
+                }
+            },
+            "On Top Button": {
+                "selector": "a.back-top"
             }
         }
     }
