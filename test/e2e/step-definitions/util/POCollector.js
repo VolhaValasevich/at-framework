@@ -15,7 +15,9 @@ class POCollector {
                 obj.selector = masterselector + obj.selector;
             }
         }
-        if (!obj.selector) throw new Error(`Object ${util.inspect(obj, false, null)} doesn't have a selector!`);
+        if (!obj.selector) {
+            throw new Error(`Object ${util.inspect(obj, false, null)} doesn't have a selector!`);
+        }
         if (obj.children) {
             Object.keys(obj.children).forEach((key) => {
                 obj.children[key] = this.getReferences(dir, obj.children[key]);
@@ -34,7 +36,9 @@ class POCollector {
         }
         if (pages.length === 0) throw new Error(`Directory [${fullPath}] is empty!`)
         pages.forEach((page) => {
-            if (page === 'MasterPO.json' || path.extname(page) !== '.json') return;
+            if (page === 'MasterPO.json' || path.extname(page) !== '.json') {
+                return;
+            }
             let pageObj = this.requireJson(path.resolve(dir, 'pages', page));
             pageObj = this.getReferences(dir, pageObj);
             this.masterPO[pageObj.url] = pageObj;

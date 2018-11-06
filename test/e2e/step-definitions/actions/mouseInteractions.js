@@ -14,9 +14,8 @@ When(/^I click "([^"]*)" text in "([^"]*)"$/, async (text, alias) => {
     alias = await memory.parseString(alias);
     text = await memory.parseString(text);
     logger.info(`I click [${text}] text in [${alias}]`);
-    return step.getElementFromCollectionByText(alias, text).then((el) => {
-        el.click();
-    })
+    const element = await step.getElementFromCollectionByText(alias, text)
+    return element.click();
 });
 
 When(/^I type "([^"]*)" in "([^"]*)"$/, async (text, alias) => {

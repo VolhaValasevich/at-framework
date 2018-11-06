@@ -80,7 +80,9 @@ class ElementHelper {
 
     getChildElement(elementToGet, pageObject, number) {
         if (number !== null) {  //string.match returns null if there's no match
-            if (!pageObject.isCollection) throw new Error(`Error in getting #${number} instance of [${pageObject.selector}] - not a collection!`)
+            if (!pageObject.isCollection) {
+                throw new Error(`Error in getting #${number} instance of [${pageObject.selector}] - not a collection!`)
+            }
             return elementToGet.all(by.css(pageObject.selector)).get(number - 1);
         } else if (pageObject.isCollection) {
             return elementToGet.all(by.css(pageObject.selector));
@@ -92,9 +94,14 @@ class ElementHelper {
     async getPageObject() {
         let url = await browser.getCurrentUrl();
         logger.action(`Getting Page Object for [${url}]`);
-        if (url === this.baseUrl) url = '';
-        else url = url.replace(this.baseUrl, '\/').match(/(\/[a-z0-9-_]+)+/)[0];
-        if (!this.masterPO[url]) throw new Error(`No Page Object found for [${url}]!`);
+        if (url === this.baseUrl) {
+            url = '';
+        } else {
+            url = url.replace(this.baseUrl, '\/').match(/(\/[a-z0-9-_]+)+/)[0];
+        }
+        if (!this.masterPO[url]) {
+            throw new Error(`No Page Object found for [${url}]!`);
+        }
         return this.masterPO[url];
     }
 

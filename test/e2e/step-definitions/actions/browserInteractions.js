@@ -2,6 +2,8 @@
 let {Then, When, Given} = require('cucumber');
 const memory = browser.params.MEMORY;
 const logger = require('../util/logger').logger;
+const { setDefaultTimeout } = require('cucumber');
+setDefaultTimeout(60 * 1000);
 
 When(/^I wait "([^"]*)" seconds$/, async (waitTime) => {
     waitTime = await memory.parseString(waitTime);
