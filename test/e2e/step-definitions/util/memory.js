@@ -6,14 +6,17 @@ class Memory {
     }
 
     parseString(string) {
-        if (typeof string === 'string' && string.match(/^\$[\w\s-]+/)) {
-            return this.get(string.substring(1));
+        if (typeof string === 'string' && string.match(/\$[\w-]+/) !== null) {
+            string.match(/\$[\w-]+/g).forEach((match) => {
+                const value = this.get(match.substring(1));
+                string = string.replace(match, value)
+            })
         }
-        else return string;
+        return string;
     }
 
     store(key, value) {
-        if (typeof key === 'string' && key.match(/^\$[\w\s-]+/)) {
+        if (typeof key === 'string' && key.match(/^\$[\w-]+/)) {
             key = key.substring(1);
         }
         if (this.storage[key]) {
@@ -25,7 +28,8 @@ class Memory {
 
     get(key) {
         if (!this.storage[key]) {
-            throw new Error(`No [${key}] object found in memory.`);
+            logger.error(`No [${key}] object found in memory.`);
+            return `${key}`;
         }
         return this.storage[key];
     }
