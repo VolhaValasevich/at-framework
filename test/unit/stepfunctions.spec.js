@@ -31,6 +31,11 @@ describe('Step Functions', () => {
         expect(text).to.be.eql('SSD');
     })
 
+    it('should get index of an element from collection by text', async () => {
+        const index = await step.getIndexOfElementByText('Header > Navigation Links', 'SSD');
+        expect(index).to.be.eql(3);
+    })
+
     it('should get element count', async () => {
         const number = await step.getNumberOfElements('Header > Navigation Bar > Navigation Links');
         expect(number).to.be.eql(8);

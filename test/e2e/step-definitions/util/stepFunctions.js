@@ -119,8 +119,7 @@ class StepFunctions {
         }
     }
 
-    async getElementFromCollectionByText(alias, text) {
-        logger.action(`Getting element with [${text}] text from [${alias}]`);
+    async getIndexOfElementByText(alias, text) {
         const collection = await this.helper.getElement(alias);
         if (!collection.length) {
             throw new Error(`Cannot get element with text [${text}] - [${alias}] is not a collection!`);
@@ -128,10 +127,17 @@ class StepFunctions {
         for (let i = 0; i < collection.length; i++) {
             const elementtext = await collection[i].getText();
             if (text === elementtext) {
-                return collection[i];
+                return i;
             }
         }
         throw new Error(`No element with text [${text}] in [${alias}]!`);
+    }
+
+    async getElementFromCollectionByText(alias, text) {
+        logger.action(`Getting element with [${text}] text from [${alias}]`);
+        const collection = await this.helper.getElement(alias);
+        const index = await this.getIndexOfElementByText(alias, text);
+        return collection[index];
     }
 }
 
