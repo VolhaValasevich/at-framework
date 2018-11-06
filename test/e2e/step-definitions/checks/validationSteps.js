@@ -6,56 +6,80 @@ const memory = browser.params.MEMORY;
 const logger = require('../util/logger').logger;
 
 Then(/^"([^"]*)" should( not)? be visible$/, async (alias, notArg) => {
-    alias = memory.parseString(alias);
+    alias = await memory.parseString(alias);
     logger.info(`I check if [${alias}] is visible`);
-    notArg = notArg ? 'not' : '';
+    notArg = notArg ? ' not' : '';
     let result = await step.isElementPresent(alias);
-    return expect(result).to.equal(!notArg);
+    return expect(result).to.be.equal(!notArg);
 });
 
 Then(/^Count of "([^"]*)" should( not)? be "([^"]*)"$/, async (alias, notArg, expectedNumber) => {
-    alias = memory.parseString(alias);
-    expectedNumber = memory.parseString(expectedNumber);
+    alias = await memory.parseString(alias);
+    expectedNumber = await memory.parseString(expectedNumber);
     logger.info(`I check if count of [${alias}] is ${expectedNumber}`);
-    notArg = notArg ? 'not' : 'be';
+    notArg = notArg ? ' not' : '';
     let result = await step.getNumberOfElements(alias);
     expectedNumber = parseInt(expectedNumber, 10);
-    return expect(result).to[notArg].equal(expectedNumber);
+    if (notArg) {
+        return expect(result).to.not.equal(expectedNumber);   
+    }
+    else {
+        return expect(result).to.equal(expectedNumber);
+    }
 });
 
 Then(/^Text of "([^"]*)" should( not)? contain "([^"]*)"$/, async (alias, notArg, textToContain) => {
-    alias = memory.parseString(alias);
-    textToContain = memory.parseString(textToContain);
+    alias = await memory.parseString(alias);
+    textToContain = await memory.parseString(textToContain);
     logger.info(`I check if text of [${alias}] contains [${textToContain}]`);
-    notArg = notArg ? 'not' : 'be';
+    notArg = notArg ? ' not' : '';
     let elementText = await step.getText(alias);
-    return expect(elementText).to[notArg].contain(textToContain);
+    if (notArg) {
+        return expect(elementText).to.not.contain(textToContain);   
+    }
+    else {
+        return expect(elementText).to.contain(textToContain);
+    }
 });
 
 Then(/^Text of "([^"]*)" should( not)? equal "([^"]*)"$/, async (alias, notArg, textToContain) => {
-    alias = memory.parseString(alias);
-    textToContain = memory.parseString(textToContain);
+    alias = await memory.parseString(alias);
+    textToContain = await memory.parseString(textToContain);
     logger.info(`I check if text of [${alias}] equals [${textToContain}]`);
-    notArg = notArg ? 'not' : 'be';
+    notArg = notArg ? ' not' : '';
     let elementText = await step.getText(alias);
-    return expect(elementText).to[notArg].eql(textToContain);
+    if (notArg) {
+        return expect(elementText).to.not.be.eql(textToContain);  
+    }
+    else {
+        return expect(elementText).to.be.eql(textToContain);  
+    }  
 });
 
 Then(/^Attribute "([^"]*)" of "([^"]*)" should( not)? be "([^"]*)"$/, async (attributeName, alias, notArg, expectedAttribute) => {
-    attributeName = memory.parseString(attributeName);
-    alias = memory.parseString(alias);
-    expectedAttribute = memory.parseString(expectedAttribute);
+    attributeName = await memory.parseString(attributeName);
+    alias = await memory.parseString(alias);
+    expectedAttribute = await memory.parseString(expectedAttribute);
     logger.info(`I check if ${attributeName} of [${alias}] is [${expectedAttribute}]`);
-    notArg = notArg ? 'not' : 'be';
-    return step.getAttribute(alias, attributeName).then((attribute) => {
-        return expect(attribute).to[notArg].eql(expectedAttribute);
-    })
+    notArg = notArg ? ' not' : '';
+    let attribute = await step.getAttribute(alias, attributeName);
+    if (notArg) {
+        return expect(attribute).to.not.be.eql(expectedAttribute); 
+    }
+    else {
+        return expect(attribute).to.be.eql(expectedAttribute);
+    }     
 });
 
 Then(/^Page title should( not)? be "([^"]*)"$/, async (notArg, text) => {
-    text = memory.parseString(text);
+    text = await memory.parseString(text);
     logger.info(`I check if page title is [${text}]`);
-    notArg = notArg ? 'not' : 'be';
+    notArg = notArg ? ' not' : '';
     let pageTitle = await browser.getTitle();
-    return expect(pageTitle).to[notArg].equal(text);
+    if (notArg) {
+        return expect(pageTitle).to.not.equal(text);
+    }
+    else {
+        return expect(pageTitle).to.be.equal(text);
+    }  
 });

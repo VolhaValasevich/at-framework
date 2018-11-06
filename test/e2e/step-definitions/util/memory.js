@@ -5,28 +5,23 @@ class Memory {
         this.storage = {};
     }
 
-    parseString(string) {
-        if (typeof string === 'string' && string.match(/^\$[\w\s-]+/)) {
-            return this.get(string.substring(1));
-        }
+    async parseString(string) {
+        if (typeof string === 'string' && string.match(/^\$[\w\s-]+/)) return this.get(string.substring(1));
         else return string;
     }
 
-    store(key, value) {
-        if (typeof key === 'string' && key.match(/^\$[\w\s-]+/)) {
-            key = key.substring(1);
-        }
-        if (this.storage[key]) {
-            logger.warn(`Overwriting ${key} with ${value}`);
-        }
+    async store(key, value) {
+        const session = await browser.getSession();
+        if (typeof key === 'string' && key.match(/^\$[\w\s-]+/)) key = key.substring(1);
+        if (this.storage[key + session.getId()]) logger.warn(`Overwriting ${key} with ${value}`);
         logger.action(`Saving [${value}] as [$${key}]`);
-        this.storage[key] = value;
+        this.storage[key + session.getId()] = value;
     }
 
-    get(key) {
-        if (!this.storage[key]) {
-            throw new Error(`No [${key}] object found in memory.`);
-        }
+    async get(key) {
+        const session = await browser.getSession();
+        key += session.getId();
+        if (!this.storage[key]) throw new Error(`No [${key}] object found in memory.`);
         return this.storage[key];
     }
 
