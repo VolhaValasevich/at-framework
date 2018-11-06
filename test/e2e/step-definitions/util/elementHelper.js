@@ -19,9 +19,6 @@ class ElementHelper {
         elementPath.forEach((alias) => {
             let number = this.getNumberOfElement(alias);
             alias = alias.replace(/#\d+|first|second|last/, '').trim();
-            if (!pageObject.children[alias]) throw new Error(`No child element [${alias}] in ${util.inspect(pageObject, false, 1)}`);
-            pageObject = pageObject.children[alias];
-            elementToGet = this.getChildElement(elementToGet, pageObject, number);
             if (!parentPageObject.children[alias]) {                                    //if there is no child element with requested name
                 let completePath = this.findElementInChain(parentPageObject, alias);    //find the element inside the chain of child objects
                 if (completePath) {                                 //if the element is found
