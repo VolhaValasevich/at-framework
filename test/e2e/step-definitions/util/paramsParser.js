@@ -6,8 +6,10 @@ function getTags({ tags }) {
     if (typeof tags === 'string') {
         tags.split(',').forEach((element) => {
             element = element.trim();
-            if (element.match(/^~?@\w+/) !== null) result.push(element);
-            else throw new Error(`Could not parse the tag [${element}]: all tags should start with ~ or @ and contain only word characters.`);
+            if (element.match(/^~?@\w+/) === null) {
+                throw new Error(`Could not parse the tag [${element}]: all tags should start with ~ or @ and contain only word characters.`);
+            }
+            result.push(element); 
         });
     }
     logger.info(`Tags: [${result}]`);
