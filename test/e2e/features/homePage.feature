@@ -6,15 +6,15 @@ Feature: Home Page general tests
         Given I open "https://www.sandisk.com/home" url
         When I click "Slider Section > Buttons #<index>"
         And I wait until "Slider Section > Slides #<index>" is present
-        Then Text of "Slider Section > Slides #<index> > Title" should equal <title>
+        Then Text of "Slider Section > Slides #<index> > Title" should equal "<title>"
         And "Slider Section > Slides #<index> > Button" should be visible
 
         Examples:
-            | index | title                                    |
-            | 1     | "SANDISK EXTREME PORTABLE SSD"           |
-            | 2     | "iXPAND MINI"                            |
-            | 3     | "WORLD'S\nHIGHEST-CAPACITY MICROSD CARD" |
-            | 4     | "SANDISK ULTRA FIT\nUSB 3.1 FLASH DRIVE" |
+            | index | title                                  |
+            | 1     | SANDISK EXTREME PORTABLE SSD           |
+            | 2     | iXPAND MINI                            |
+            | 3     | WORLD'S\nHIGHEST-CAPACITY MICROSD CARD |
+            | 4     | SANDISK ULTRA FIT\nUSB 3.1 FLASH DRIVE |
 
     @product_chooser
     Scenario: User can see results sorted by category
@@ -42,3 +42,9 @@ Feature: Home Page general tests
         When I remember attribute "class" of "Subscribe Section > Checkbox Error Message" as "$checkboxErrorMessageClass"
         And I click "Subscribe Section > Sign Up Button"
         Then Attribute "class" of "Subscribe Section > Checkbox Error Message" should not be "$checkboxErrorMessageClass"
+
+    Scenario: User can click on the links in the navbar
+        Given I open "https://www.sandisk.com/home" url
+        When I remember index of "Header > Navigation Links" containing text "SSD" as "$ssdIndex"
+        And I click "Header > Navigation Bar > Navigation Links #$ssdIndex"
+        Then Page title should be "Solid State Drives | SanDisk"

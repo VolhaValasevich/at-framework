@@ -34,11 +34,11 @@ Feature: Main Page Header
         Given I open "https://www.sandisk.com/" url
         When I wait until "Header > Navigation Bar" is present
         And I click "Header > Navigation Bar > Navigation Links #<index>"
-        Then Page title should be <title>
+        Then Page title should be "<title>"
 
         Examples:
-            | index | title                                                       |
-            | 1     | "Global Leader in Flash Memory Storage Solutions \| SanDisk"|
-            | 2     | "For Business - Sandisk Flash Storage Solutions"            |
-            | 3     | "Sandisk - OEM Design Solutions"                            |
-            | 4     | "About SanDisk - Expanding the Possibilities of Storage"    |
+            | index | title                                                     |
+            | 1     | Global Leader in Flash Memory Storage Solutions \| SanDisk|
+            | 2     | For Business - Sandisk Flash Storage Solutions            |
+            | 3     | Sandisk - OEM Design Solutions                            |
+            | 4     | About SanDisk - Expanding the Possibilities of Storage    |
