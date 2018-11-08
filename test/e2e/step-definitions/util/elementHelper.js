@@ -22,6 +22,7 @@ class ElementHelper {
             if (!parentPageObject.children[alias]) {                                    //if there is no child element with requested name
                 let completePath = this.findElementInChain(parentPageObject, alias);    //find the element inside the chain of child objects
                 if (completePath) {                                 //if the element is found
+                    logger.info(`Found missing segment of element chain: [${completePath}]`);
                     completePath = this.parsePath(completePath);    //get the missing part of element chain
                     completePath.pop();                             //remove the alias of element itself
                     completePath.forEach((childAlias) => {          //get the elements in-between
