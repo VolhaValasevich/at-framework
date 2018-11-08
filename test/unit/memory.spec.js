@@ -39,6 +39,12 @@ describe('Memory tests', () => {
         expect(parsedValue).to.be.eql('1 and 2 and 3');
     })
 
+    it('should parse a string with constant keys', () => {
+        memory.store('key', 'value');
+        const parsedValue = memory.parseString('$key and $$key');
+        expect(parsedValue).to.be.eql('value and constantValue');
+    })
+
     it('should be able to clean storage', () => {
         memory.store('key', 'value');
         memory.clean();

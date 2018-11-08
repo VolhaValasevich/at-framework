@@ -1,3 +1,5 @@
+const path = require('path');
+
 exports.config = {
 
     specs: ['../*.spec.js'],
@@ -7,9 +9,9 @@ exports.config = {
     },
 
     params: {
-        PAGE_OBJECT_DIRECTORY: './test/unit/resources',
+        PAGE_OBJECT_DIRECTORY: path.resolve('./test/unit/resources'),
         BASE_URL: 'https://www.sandisk.com/',
-        MEMORY: require('../../e2e/step-definitions/util/memory')
+        MEMORY: require(path.resolve('./test/e2e/step-definitions/util/memory'))
     },
 
     jasmineNodeOpts: {
@@ -17,6 +19,7 @@ exports.config = {
     },
 
     onPrepare: () => {
+        browser.params.MEMORY.setConstants(path.resolve('./test/unit/resources/constants.json'));
         browser.driver.manage().window().maximize();
     }
 };
