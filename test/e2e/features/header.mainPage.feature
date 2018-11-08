@@ -16,21 +16,18 @@ Feature: Main Page Header
         Then Page title should be "SanDisk Search Results"
 
     @navbar
-    Scenario Outline: Verify links in the navigation bar have correct titles
+    Scenario: Verify links in the navigation bar have correct titles
         Given I open "https://www.sandisk.com/" url
         When I wait until "Header > Navigation Bar" is present
-        Then Text of "Header > Navigation Bar > Navigation Links #<index>" should equal <text>
-
-        Examples:
-            | index | text            |
-            | 1     | "FOR HOME"      |
-            | 2     | "FOR BUSINESS"  |
-            | 3     | "OEM DESIGN"    |
-            | 4     | "ABOUT SANDISK" |
-            | 5     | "SUPPORT"       |
+        Then I should see the following lines in "Header > Navigation Bar > Navigation Links"
+            | "FOR HOME"      |
+            | "FOR BUSINESS"  |
+            | "OEM DESIGN"    |
+            | "ABOUT SANDISK" |
+            | "SUPPORT"       |
 
     @navbar
-    Scenario Outline: Verify user can click on the links in the navigation bar
+    Scenario Outline: Verify user can click on the <title> link in the navigation bar
         Given I open "https://www.sandisk.com/" url
         When I wait until "Header > Navigation Bar" is present
         And I click "Header > Navigation Bar > Navigation Links #<index>"

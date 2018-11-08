@@ -2,7 +2,7 @@
 Feature: Main Page
 
     @slider
-    Scenario Outline: User can switch slides
+    Scenario Outline: User can switch to "<title>" slide
         Given I open "https://www.sandisk.com/" url
         When I click "Slider Section > Buttons #<index>"
         And I wait until "Slider Section > Slides #<index>" is present
