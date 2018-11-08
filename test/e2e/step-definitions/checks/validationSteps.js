@@ -60,9 +60,9 @@ Then(/^Page title should( not)? be "([^"]*)"$/, async (notArg, text) => {
     return expect(pageTitle).to[notArg].equal(text);
 });
 
-Then(/^Element "([^"]*)" should( not)? be visible in the viewport$/, async (notArg, alias) => {
+Then(/^Element "([^"]*)" should( not)? be( partially)? visible in the viewport$/, async (alias, notArg, partially) => {
     alias = memory.parseString(alias);
     notArg = notArg ? 'not' : '';
-    const status = await step.isElementInViewport(alias);
+    const status = await step.isElementInViewport(alias, partially);
     return expect(status).to.equal(!notArg);
 })

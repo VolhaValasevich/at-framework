@@ -48,3 +48,8 @@ Feature: Home Page general tests
         When I remember index of "Header > Navigation Links" containing text "SSD" as "$ssdIndex"
         And I click "Header > Navigation Bar > Navigation Links #$ssdIndex"
         Then Page title should be "Solid State Drives | SanDisk"
+
+    Scenario: User can scroll the window
+        Given I open "https://www.sandisk.com/home" url
+        When I scroll to "Functional Footer > Main Links Section > Main Links #1"
+        Then Element "Functional Footer > Main Links Section > Main Links #1" should be visible in the viewport

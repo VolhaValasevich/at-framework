@@ -156,13 +156,21 @@ class StepFunctions {
         return browser.executeScript('window.scrollTo(0, arguments[0])', elementYpos);
     };
 
-    async isElementInViewport(alias) {
+    async isElementInViewport(alias, partially) {
         const element = await this.helper.getElement(alias);
         const rect = await browser.executeScript('return arguments[0].getBoundingClientRect();', element);
         const innerHeight = await browser.executeScript('return window.innerHeight');
         const innerWidth = await browser.executeScript('return window.innerWidth');
         const clientHeight = await browser.executeScript('return window.document.documentElement.clientHeight');
         const clientWidth = await browser.executeScript('return window.document.documentElement.clientWidth');
+        if (partially) {
+            return (
+                rect.bottom > 0 &&
+                rect.right > 0 &&
+                rect.left < (innerWidth || clientWidth) &&
+                rect.top < (innerHeight || clientHeight)
+            )
+        }
         return (
             rect.top >= 0 &&
             rect.left >= 0 &&
