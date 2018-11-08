@@ -1,5 +1,5 @@
 'use strict';
-let {Then, When, Given} = require('cucumber');
+let { Then, When, Given } = require('cucumber');
 const expect = require('chai').expect;
 const step = require('../util/stepFunctions');
 const memory = browser.params.MEMORY;
@@ -59,3 +59,10 @@ Then(/^Page title should( not)? be "([^"]*)"$/, async (notArg, text) => {
     let pageTitle = await browser.getTitle();
     return expect(pageTitle).to[notArg].equal(text);
 });
+
+Then(/^Element "([^"]*)" should( not)? be visible in the viewport$/, async (notArg, alias) => {
+    alias = memory.parseString(alias);
+    notArg = notArg ? 'not' : '';
+    const status = await step.isElementInViewport(alias);
+    return expect(status).to.equal(!notArg);
+})

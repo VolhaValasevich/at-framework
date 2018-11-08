@@ -25,3 +25,9 @@ When(/^I type "([^"]*)" in "([^"]*)"$/, async (text, alias) => {
     if (text === 'ENTER') text = protractor.Key.ENTER;
     return step.sendKeys(alias, text);
 });
+
+When(/^I scroll to "([^"]*)"$/, async (alias) => {
+    alias = await memory.parseString(alias);
+    logger.info(`I scroll to [${alias}]`);
+    return step.scrollElementToMiddle(alias);
+})

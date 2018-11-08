@@ -69,8 +69,19 @@ describe('Step Functions', () => {
         return expect(step.getNumberOfElements('Header > Navigation Bar > Navigation Links #2')).to.eventually.be.rejectedWith(Error, 'Cannot get number of [Header > Navigation Bar > Navigation Links #2] - element is not a collection');
     })
 
+    it('should check if an element is in viewport', async () => {
+        const status = await step.isElementInViewport('Functional Footer > Main Links Section > Main Links #1');
+        expect(status).to.be.false;
+    })
+
+    it('should scroll the element in the middle of the window', async () => {
+        await step.scrollElementToMiddle('Functional Footer > Main Links Section > Main Links #1');
+        const status = await step.isElementInViewport('Functional Footer > Main Links Section > Main Links #1');
+        expect(status).to.be.true;
+    })
+
     describe('tests that change url', () => {
-        afterEach(async () => {
+        beforeEach(async () => {
             await browser.get('https://www.sandisk.com/home');
         })
 

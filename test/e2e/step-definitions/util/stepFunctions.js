@@ -139,6 +139,37 @@ class StepFunctions {
         const index = await this.getIndexOfElementByText(alias, text);
         return collection[index];
     }
+
+    async scrollElementToMiddle(alias) {
+        const element = await this.helper.getElement(alias);
+        const location = await element.getLocation();
+        const scrollLength = await browser.executeScript('return window.document.body.offsetHeight');
+        const outerHeight = await browser.executeScript('return window.outerHeight');
+        let elementYpos = location.y;
+        logger.info('scrollLength: ' + scrollLength);
+        logger.info('elementYpos: ' + elementYpos);
+        logger.info('outerHeight: ' + outerHeight);
+        if (scrollLength - elementYpos >= outerHeight * 0.5) {
+            elementYpos -= (outerHeight * 0.5);
+        }
+        logger.info('scrollTo: ' + elementYpos);
+        return browser.executeScript('window.scrollTo(0, arguments[0])', elementYpos);
+    };
+
+    async isElementInViewport(alias) {
+        const element = await this.helper.getElement(alias);
+        const rect = await browser.executeScript('return arguments[0].getBoundingClientRect();', element);
+        const innerHeight = await browser.executeScript('return window.innerHeight');
+        const innerWidth = await browser.executeScript('return window.innerWidth');
+        const clientHeight = await browser.executeScript('return window.document.documentElement.clientHeight');
+        const clientWidth = await browser.executeScript('return window.document.documentElement.clientWidth');
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (innerHeight || clientHeight) &&
+            rect.right <= (innerWidth || clientWidth)
+        );
+    }
 }
 
 module.exports = new StepFunctions();
