@@ -66,3 +66,26 @@ Then(/^Element "([^"]*)" should( not)? be( partially)? visible in the viewport$/
     const status = await step.isElementInViewport(alias, partially);
     return expect(status).to.equal(!notArg);
 })
+
+Then(/^I should see the following lines in "([^"]*)"/, (alias, dataTable) => {
+    return step.getNumberOfElements(alias).then((counter) => {
+        let promises = [];
+        let foundElement;
+        let error = false;
+        for (let i = 0; i < counter; i++) {
+            foundElement = step.getText(`${alias} #${i + 1}`);
+            promises.push(foundElement);
+        }
+        Promise.all(promises).then((linesText) => {
+            dataTable.raw().forEach((text, index) => {
+                if (text !== linesText[index]) {
+                    logger.error('|', linesText[index], '| Text is not equal: |', text, '|');
+                    error = true;
+                }
+            });
+            if (error) {
+                throw new Error('Error. Some elements do not match');
+            }
+        });
+    });
+});
