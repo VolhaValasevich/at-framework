@@ -13,7 +13,6 @@ class ElementHelper {
     async getElement(fullElementPath) {
         logger.action(`Getting an element [${fullElementPath}]`);
         const elementPath = this.parsePath(fullElementPath);
-        let pageObject = await this.getPageObject();
         let parentPageObject = await this.getPageObject();
         let elementToGet = await element(by.css('html'));
         elementPath.forEach((alias) => {
