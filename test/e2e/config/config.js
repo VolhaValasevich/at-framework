@@ -29,6 +29,7 @@ exports.config = {
         MEMORY: require('../step-definitions/util/memory')
     },
     onPrepare: () => {
+        browser.params.MEMORY.setConstants(path.resolve('./test/e2e/resources/constants.json'));
         browser.manage().window().setSize(1000, 800);
     }
 };
