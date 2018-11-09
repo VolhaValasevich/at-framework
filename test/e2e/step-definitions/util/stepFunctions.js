@@ -178,6 +178,17 @@ class StepFunctions {
             rect.right <= (innerWidth || clientWidth)
         );
     }
+
+    async getAllTextLinesFromCollection(alias) {
+        const counter = await this.getNumberOfElements(alias);
+        let linesText = [];
+        let foundElement;
+        for (let i = 0; i < counter; i++) {
+            foundElement = await this.getText(`${alias} #${i + 1}`);
+            linesText.push(foundElement);
+        }
+        return linesText;
+    }
 }
 
 module.exports = new StepFunctions();
