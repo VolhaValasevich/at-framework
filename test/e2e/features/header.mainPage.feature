@@ -20,11 +20,11 @@ Feature: Main Page Header
         Given I open "https://www.sandisk.com/" url
         When I wait until "Header > Navigation Bar" is present
         Then I should see the following lines in "Header > Navigation Bar > Navigation Links"
-            | "FOR HOME"      |
-            | "FOR BUSINESS"  |
-            | "OEM DESIGN"    |
-            | "ABOUT SANDISK" |
-            | "SUPPORT"       |
+            | FOR HOME      |
+            | FOR BUSINESS  |
+            | OEM DESIGN    |
+            | ABOUT SANDISK |
+            | SUPPORT       |
 
     @navbar
     Scenario Outline: Verify user can click on the <title> link in the navigation bar
