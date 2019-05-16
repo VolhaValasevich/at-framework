@@ -1,5 +1,5 @@
-# sandisk-framework
-test framework for www.sandisk.com
+# at-framework
+test framework for web applications
 
 ## Installation
 ```

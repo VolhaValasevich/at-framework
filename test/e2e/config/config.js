@@ -25,11 +25,10 @@ exports.config = {
     },
     params: {
         PAGE_OBJECT_DIRECTORY: './test/e2e/po',
-        BASE_URL: 'https://www.sandisk.com/',
+        BASE_URL: 'https://iknow.cch.com.au',
         MEMORY: require('../step-definitions/util/memory')
     },
     onPrepare: () => {
-        browser.params.MEMORY.setConstants(path.resolve('./test/e2e/resources/constants.json'));
-        browser.manage().window().setSize(1000, 800);
+        browser.manage().window().maximize();
     }
 };

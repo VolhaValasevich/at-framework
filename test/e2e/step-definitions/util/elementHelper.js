@@ -21,7 +21,6 @@ class ElementHelper {
             if (!parentPageObject.children[alias]) {                                    //if there is no child element with requested name
                 let completePath = this.findElementInChain(parentPageObject, alias);    //find the element inside the chain of child objects
                 if (completePath) {                                 //if the element is found
-                    logger.info(`Found missing segment of element chain: [${completePath}]`);
                     completePath = this.parsePath(completePath);    //get the missing part of element chain
                     completePath.pop();                             //remove the alias of element itself
                     completePath.forEach((childAlias) => {          //get the elements in-between
@@ -80,9 +79,7 @@ class ElementHelper {
 
     getChildElement(elementToGet, pageObject, number) {
         if (number !== null) {  //string.match returns null if there's no match
-            if (!pageObject.isCollection) {
-                throw new Error(`Error in getting #${number} instance of [${pageObject.selector}] - not a collection!`)
-            }
+            if (!pageObject.isCollection) throw new Error(`Error in getting #${number} instance of [${pageObject.selector}] - not a collection!`)
             return elementToGet.all(by.css(pageObject.selector)).get(number - 1);
         } else if (pageObject.isCollection) {
             return elementToGet.all(by.css(pageObject.selector));
@@ -94,14 +91,9 @@ class ElementHelper {
     async getPageObject() {
         let url = await browser.getCurrentUrl();
         logger.action(`Getting Page Object for [${url}]`);
-        if (url === this.baseUrl) {
-            url = '';
-        } else {
-            url = url.replace(this.baseUrl, '\/').match(/(\/[a-z0-9-_]+)+/)[0];
-        }
-        if (!this.masterPO[url]) {
-            throw new Error(`No Page Object found for [${url}]!`);
-        }
+        if (url === this.baseUrl) url = '';
+        else url = url.replace(this.baseUrl, '\/').match(/(\/[a-z0-9-_]+)/)[0];
+        if (!this.masterPO[url]) throw new Error(`No Page Object found for [${url}]!`);
         return this.masterPO[url];
     }
 

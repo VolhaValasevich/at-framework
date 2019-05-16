@@ -1,0 +1,45 @@
+{
+  "selector": ".wk-content-filter-results",
+  "children": {
+    "Flat List": {
+      "selector": ".search-result-flat-list",
+      "children": {
+        "Results": {
+          "selector": ".search-result-list-item",
+          "isCollection": true,
+          "children": {
+            "Title": {
+              "selector": ".title",
+              "children": {
+                "Favourite Icon": {
+                  "selector": "i[wk-icon='star']"
+                }
+              }
+            },
+            "Green Label": {
+              "selector": ".item-info > span"
+            },
+            "Checkbox": {
+              "selector": "input[type='checkbox']"
+            }
+          }
+        }
+      }
+    },
+    "Clusters": {
+      "selector": ".search-result-cluster-list .search-result-cluster",
+      "isCollection": true,
+      "children": {
+        "Results": {
+          "selector": ".search-result-list-item",
+          "isCollection": true,
+          "children": {
+            "Title": {
+              "selector": ".title"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -8,10 +8,9 @@
   },
   "scripts": {
     "preinstall": "mkdir reports",
-    "postinstall": "webdriver-manager update",
+    "postinstall": "webdriver-manager update --standalone --versions.standalone=3.8.0",
     "unit": "protractor ./test/unit/config/config.js",
-    "server": "./node_modules/.bin/webdriver-manager start",
-    "pretest": "rmdir /s /q reports && mkdir reports",
+    "server": "./node_modules/.bin/webdriver-manager start --versions.standalone=3.8.0",
     "test": "protractor ./test/e2e/config/config.js",
     "report": "node ./reporter.js"
   },
@@ -20,7 +19,6 @@
     "chai-as-promised": "^7.1.1",
     "cucumber": "^3.2.1",
     "cucumber-html-reporter": "^3.0.4",
-    "eslint": "^5.2.0",
     "protractor": "^5.2.2",
     "protractor-cucumber-framework": "^4.1.1",
     "winston": "^3.1.0",

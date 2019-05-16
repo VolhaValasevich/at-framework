@@ -23,21 +23,29 @@ Then(/^Count of "([^"]*)" should( not)? be "([^"]*)"$/, async (alias, notArg, ex
     return expect(result).to[notArg].equal(expectedNumber);
 });
 
-Then(/^Text of "([^"]*)" should( not)? contain "([^"]*)"$/, async (alias, notArg, textToContain) => {
+Then(/^Text of "([^"]*)" should( not)? contain "([^"]*)"( being case insensitive)?$/, async (alias, notArg, textToContain, checkCase) => {
     alias = memory.parseString(alias);
     textToContain = memory.parseString(textToContain);
     logger.info(`I check if text of [${alias}] contains [${textToContain}]`);
     notArg = notArg ? 'not' : 'be';
     let elementText = await step.getText(alias);
+    if (checkCase) {
+        textToContain = textToContain.toLowerCase();
+        elementText = elementText.toLowerCase();
+    }
     return expect(elementText).to[notArg].contain(textToContain);
 });
 
-Then(/^Text of "([^"]*)" should( not)? equal "([^"]*)"$/, async (alias, notArg, textToContain) => {
+Then(/^Text of "([^"]*)" should( not)? equal "([^"]*)( being case insensitive)?"$/, async (alias, notArg, textToContain, checkCase) => {
     alias = memory.parseString(alias);
     textToContain = memory.parseString(textToContain);
     logger.info(`I check if text of [${alias}] equals [${textToContain}]`);
     notArg = notArg ? 'not' : 'be';
     let elementText = await step.getText(alias);
+    if (checkCase) {
+        textToContain = textToContain.toLowerCase();
+        elementText = elementText.toLowerCase();
+    }
     return expect(elementText).to[notArg].eql(textToContain);
 });
 
@@ -58,19 +66,4 @@ Then(/^Page title should( not)? be "([^"]*)"$/, async (notArg, text) => {
     notArg = notArg ? 'not' : 'be';
     let pageTitle = await browser.getTitle();
     return expect(pageTitle).to[notArg].equal(text);
-});
-
-Then(/^Element "([^"]*)" should( not)? be( partially)? visible in the viewport$/, async (alias, notArg, partially) => {
-    alias = memory.parseString(alias);
-    notArg = notArg ? 'not' : '';
-    const status = await step.isElementInViewport(alias, partially);
-    return expect(status).to.equal(!notArg);
-})
-
-Then(/^I should see the following lines in "([^"]*)"/, async (alias, dataTable) => {
-    const linesText = await step.getAllTextLinesFromCollection(alias);
-    const expectedData = dataTable.raw().map((text) => {
-        return text[0];
-    });
-    return expect(linesText).to.eql(expectedData);
 });

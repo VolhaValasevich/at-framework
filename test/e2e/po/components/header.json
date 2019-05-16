@@ -1,0 +1,43 @@
+{
+  "selector": ".wk-header",
+  "children": {
+    "Login Button": {
+      "selector": "[wk-icon=\"login\"]"
+    },
+    "Logout Button": {
+      "selector": ".wk-icon-log-out, [wk-icon=\"logout\"]"
+    },
+    "Feedback Button": {
+      "selector": ".//a[.//span[@wk-icon='thumbs-up']]"
+    },
+    "Logo": {
+      "selector": ".wk-logo"
+    },
+    "Global Search": {
+      "selector": ".wk-nav.header-buttons",
+      "children": {
+        "Input": {
+          "selector": ".wk-search-input"
+        },
+        "Close Button": {
+          "selector": ".close-button"
+        },
+        "Search Submit Button": {
+          "selector": ".wk-search-submit[type=\"submit\"]"
+        }
+      }
+    },
+    "Product Name": {
+      "selector": ".wk-product-name"
+    },
+    "Breadcrumb": {
+      "selector": "ol.wk-breadcrumb",
+      "children": {
+        "Crumbs": {
+          "selector": "[ng-repeat=\"crumb in breadcrumbsArray\"] > a > span.ng-binding",
+          "isCollection": true
+        }
+      }
+    }
+  }
+}

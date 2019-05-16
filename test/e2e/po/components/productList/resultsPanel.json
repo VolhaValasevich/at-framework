@@ -1,8 +1,0 @@
-{
-    "selector": "div.results-panel",
-    "children": {
-        "Search Results": {
-            "ref": "./components/productList/searchResults.json"
-        }
-    }
-}

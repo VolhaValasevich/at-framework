@@ -1,0 +1,24 @@
+{
+  "selector": ".related-items-list",
+  "children": {
+    "Related Items": {
+      "selector": "[ng-repeat=\"relation in relations\"]",
+      "isCollection": true,
+      "children": {
+        "Block Title": {
+          "selector": ".widget-title"
+        },
+        "Relation Title": {
+          "selector": ".relation-title"
+        },
+        "Items": {
+          "selector": ".relations-list-item > .osa-doc-related-item",
+          "isCollection": true
+        },
+        "Show More Link": {
+          "selector": "[bo-show=\"hasMoreDocuments(relation)\"] > a:not(.ng-hide)"
+        }
+      }
+    }
+  }
+}

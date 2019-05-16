@@ -29,7 +29,7 @@ class Logger {
             transports: [
                 new transports.Console({
                     format: combine(
-                        label({ label: 'www.sandisk.com' }),
+                        label({ label: 'CCH iKnow AU' }),
                         timestamp({
                             format: 'YYYY-MM-DD HH:mm:ss'
                         }),

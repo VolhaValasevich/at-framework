@@ -27,9 +27,3 @@ When(/^I remember attribute "([^"]*)" of "([^"]*)" as "([^"]*)"/, async (attribu
     const attribute = await step.getAttribute(alias, attributeName);
     memory.store(key, attribute);
 })
-
-When(/^I remember index of "([^"]*)" containing text "([^"]*)" as "([^"]*)"/, async (alias, text, key) => {
-    logger.info(`I remember index of [${alias}] containing text [${text}] as [${key}]`);
-    const index = await step.getIndexOfElementByText(alias, text);
-    memory.store(key, index + 1);
-})

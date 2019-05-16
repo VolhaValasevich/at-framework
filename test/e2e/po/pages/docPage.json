@@ -1,0 +1,32 @@
+{
+  "name": "Document Page",
+  "url": "/document",
+  "selector": "html",
+  "children": {
+    "Document Area": {
+      "selector": ".document-area, .wk-document"
+    },
+    "Document Title": {
+      "selector": ".document-title"
+    },
+    "Back To Top Button": {
+      "selector": "a[back-to-top-trigger]"
+    },
+    "Related Items List": {
+      "ref": "components/relatedItems.json"
+    },
+    "Highlighted Terms": {
+      "selector": ".docSearchTerm",
+      "isCollection": true
+    },
+    "Last Reviewed Date": {
+      "selector": ".last-reviewed"
+    },
+    "Preview Teaser": {
+      "selector": ".document-preview-teaser"
+    },
+    "Freemium Teaser": {
+      "selector": ".open-document-confirmation div[ng-if='showFreemiumUserTeaser()']"
+    }
+  }
+}

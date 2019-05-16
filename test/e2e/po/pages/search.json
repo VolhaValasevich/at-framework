@@ -1,0 +1,82 @@
+{
+  "name": "Search Page",
+  "url": "/iknow-search",
+  "selector": "html",
+  "children": {
+    "Spinner": {
+      "selector": ".search-overlay"
+    },
+    "Navigation Block": {
+      "selector": ".navigation",
+      "children": {
+        "Search Label": {
+          "selector": ".header"
+        },
+        "Search Input": {
+          "selector": ".wk-search-input"
+        },
+        "Close Button": {
+          "selector": ".close-button"
+        },
+        "Search Submit Button": {
+          "selector": ".wk-search-submit[type=\"submit\"]"
+        }
+      }
+    },
+    "Search Error": {
+      "selector": ".search-error, .error-title"
+    },
+    "Search Advice": {
+      "selector": ".search-error ~h5"
+    },
+    "Search Results": {
+      "ref": "components/searchResults.json"
+    },
+    "Suggestion Block": {
+      "selector": ".suggestion-block",
+      "children": {
+        "Header": {
+          "selector": ".suggestion-header"
+        },
+        "Title": {
+          "selector": ".suggestion-title"
+        },
+        "Description": {
+          "selector": ".suggestion-description",
+          "children": {
+            "Text": {
+              "selector": ".ng-scope > .qa-text"
+            },
+            "Link": {
+              "selector": ".qa-text > a"
+            }
+          }
+        }
+      }
+    },
+    "Total Count": {
+      "selector": {
+        "selector": ".total-count",
+        "type": "css"
+      }
+    },
+    "Favourite Button": {
+      "selector": ".ik-search-fav-button > [wk-icon=\"star\"]"
+    },
+    "Search Within": {
+      "selector": "[name=\"within-search\"]",
+      "children": {
+        "Input": {
+          "selector": ".wk-search-container > input"
+        },
+        "Search Submit Button": {
+          "selector": ".wk-search-submit[type=\"submit\"]"
+        }
+      }
+    },
+    "Highlighted Terms": {
+      "selector": "wk-eip-hl",
+      "isCollection": true
+    }
+  }
+}

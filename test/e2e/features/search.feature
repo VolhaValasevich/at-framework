@@ -1,43 +1,24 @@
-@search
-Feature: Search Page
+Feature: iKnow Search
 
-    Scenario: User can search for a keyword and see results
-        Given I open "https://www.sandisk.com/tools/search" url
-        When I type "ixpand" in "Search Section > Search Input"
-        And I click "Search Section > Search Submit Button"
-        Then "Search Results Section > Results Number" should be visible
-        And "Search Results Section > Next Button" should be visible
-        And Text of "Search Results Section > Results #1 > Title" should contain "IXpand"
+  @search
+  Scenario Outline: User searches for a "<term>" term and opens a document
+    Given I open base url
+    When I clear value in "Home Search Input"
+    And I type "<term>" in "Home Search Input"
+    And I click "Search Submit Button"
+    And I wait until "Search Results" is present
+    Then Count of "Clusters" should not be "0"
+    And Count of "Clusters > Results" should not be "0"
+    And Count of "Highlighted Terms" should not be "0"
+    And Text of "Highlighted Terms #1" should contain "<result>" being case insensitive
 
-    Scenario: User can see autosuggestion if nothing was found for a keyword
-        Given I open "https://www.sandisk.com/tools/search" url
-        When I type "phhhone" in "Search Section > Search Input"
-        And I click "Search Section > Search Submit Button"
-        Then "Search Results Section > Autosuggestion" should be visible
-        And Text of "Search Results Section > Autosuggestion > Suggestions #1" should equal "phone"
+    When I remember text of "Clusters > Results #1 > Title" as "title"
+    And I click "Clusters > Results #1 > Title"
+    And I wait until "Document Area" is visible
+    Then Text of "Document Title" should contain "$title"
+    And Text of "Highlighted Terms #1" should contain "<result>" being case insensitive
 
-    Scenario: User can use autosuggestion for search
-        Given I open "https://www.sandisk.com/tools/search" url
-        When I type "phhhone" in "Search Section > Search Input"
-        And I click "Search Section > Search Submit Button"
-        And I click "Search Results Section > Autosuggestion > Suggestions #1"
-        Then "Search Results Section > Results Number" should be visible
-        And "Search Results Section > Next Button" should be visible
-        And Text of "Search Results Section > Results #1 > Title" should contain "Phone"
-
-    Scenario: User can see next page with results
-        Given I open "https://www.sandisk.com/tools/search" url
-        When I type "ixpand" in "Search Section > Search Input"
-        And I click "Search Section > Search Submit Button"
-        And I click "Search Results Section > Next Button"
-        Then Text of "Search Results Section > Results Number" should equal "RESULTS 11 - 20"
-        And "Search Results Section > Previous Button" should be visible
-
-    Scenario: User can return to previous page with results
-        Given I open "https://www.sandisk.com/tools/search" url
-        When I type "ixpand" in "Search Section > Search Input"
-        And I click "Search Section > Search Submit Button"
-        And I click "Search Results Section > Next Button"
-        And I click "Search Results Section > Previous Button"
-        Then Text of "Search Results Section > Results Number" should equal "RESULTS 1 - 10"
-        And "Search Results Section > Previous Button" should not be visible
+    Examples:
+      | term | result |
+      | tax  | tax    |
+      | law  | value  |
